@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectInfo>
+    <Name>DQAAS_2</Name>
+    <LastWriteTime>2016-12-02T09:25:45.1583065Z</LastWriteTime>
+    <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+  </ProjectInfo>
+  <LastBuildInfos>
+    <ProjectBuildItemInfo>
+      <Name>NullCheck.dtsx</Name>
+      <LastWriteTime>2016-12-01T14:33:08.6636823Z</LastWriteTime>
+      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>MasterPackage.dtsx</Name>
+      <LastWriteTime>2016-12-02T09:05:32.8683764Z</LastWriteTime>
+      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>1.Events being closed with completeness.dtsx</Name>
+      <LastWriteTime>2016-12-02T09:21:08.8568902Z</LastWriteTime>
+      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PushResultstoR2D2Model.dtsx</Name>
+      <LastWriteTime>2016-12-02T09:07:51.4103613Z</LastWriteTime>
+      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>_5.Duration in REMS is same as in JigSaw.dtsx</Name>
+      <LastWriteTime>2016-12-02T08:19:33.9021597Z</LastWriteTime>
+      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>5.Duration in REMS is same as in JigSaw.dtsx</Name>
+      <LastWriteTime>2016-12-02T09:25:45.142681Z</LastWriteTime>
+      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>_8.Events are closed without a Functional Location.dtsx</Name>
+      <LastWriteTime>2016-12-02T09:20:53.8514887Z</LastWriteTime>
+      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>8.Events are closed without a Functional Location.dtsx</Name>
+      <LastWriteTime>2016-12-02T09:21:01.9934751Z</LastWriteTime>
+      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>_9. Closed unscheduled events have comments.dtsx</Name>
+      <LastWriteTime>2016-12-02T09:25:25.6421039Z</LastWriteTime>
+      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>9. Closed unscheduled events have comments.dtsx</Name>
+      <LastWriteTime>2016-12-02T09:25:25.6021039Z</LastWriteTime>
+      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+  </LastBuildInfos>
+</BuildLog>

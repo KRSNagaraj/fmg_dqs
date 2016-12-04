@@ -1,0 +1,1832 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/29/2016 9:32:11 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="BASCOEVM-SS"
+  DTS:CreatorName="BASCOEVM-SS\N"
+  DTS:DTSID="{22EFFBD0-B5F2-499E-A371-806642CD2905}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.6020.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="5 Duration in REMS is same as in JigSaw"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{592A6FBA-266D-47D4-A83D-483785B881B8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.REMS_DEV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7FB746D3-54FE-4F0B-9405-7EEE5138CAB5}"
+      DTS:ObjectName="LocalHost.REMS_DEV">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::SourceConn1]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=REMS_DEV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PushResultstoR2D2Model.dtsx]"
+      DTS:CreationName="FILE"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{84C20C8E-FF67-412A-B1AC-B907B8EB42AF}"
+      DTS:ObjectName="PushResultstoR2D2Model.dtsx">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::PushToR2D2Package]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="User::runid"
+      DTS:ConfigurationVariable="\Package.Variables[User::runid].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{02DD69FF-1B40-4C1D-A69A-B23F783ED45A}"
+      DTS:ObjectName="RunID" />
+    <DTS:Configuration
+      DTS:ConfigurationString="User::DQS_Server"
+      DTS:ConfigurationVariable="\Package.Variables[User::DQS_Server].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{E0ED615C-1130-4D90-90E6-301E5122AD06}"
+      DTS:ObjectName="Server" />
+    <DTS:Configuration
+      DTS:ConfigurationString="User::DQS_Pwd"
+      DTS:ConfigurationVariable="\Package.Variables[User::DQS_Pwd].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{07F3246A-5636-4465-A720-9C146883ED34}"
+      DTS:ObjectName="Password" />
+    <DTS:Configuration
+      DTS:ConfigurationString="User::DQS_User"
+      DTS:ConfigurationVariable="\Package.Variables[User::DQS_User].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{A6FFB834-9098-4BBF-93DC-0260CA4D860C}"
+      DTS:ObjectName="UserName" />
+    <DTS:Configuration
+      DTS:ConfigurationString="User::RuleID"
+      DTS:ConfigurationVariable="\Package.Variables[User::RuleID].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{6BBF861F-6506-40B9-9045-745BCD72B44A}"
+      DTS:ObjectName="RuleID" />
+    <DTS:Configuration
+      DTS:ConfigurationString="User::PushToR2D2Package"
+      DTS:ConfigurationVariable="\Package.Variables[User::PushToR2D2Package].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{D1B5DCE9-9776-46AC-ACE4-7E3DB82F6BC7}"
+      DTS:ObjectName="PushToR2D2Package" />
+  </DTS:Configurations>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C869FBDD-5707-4CB5-BC47-BCF9AD812CB2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DQS_DB">
+      <DTS:VariableValue
+        DTS:DataType="8">FMG_DQ_Services</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D7D55029-9783-4C7B-81CC-FDF3AB299350}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DQS_Pwd">
+      <DTS:VariableValue
+        DTS:DataType="8">r2d2</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5626D004-046D-4D33-9001-025950C99BC2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DQS_Server">
+      <DTS:VariableValue
+        DTS:DataType="8">.</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AD0D86F1-496B-41BD-8088-F5BDE3C4EBE7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DQS_User">
+      <DTS:VariableValue
+        DTS:DataType="8">dqs</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8059B162-F6E7-4B40-B8A3-F64D2FC56386}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EndDT">
+      <DTS:VariableValue
+        DTS:DataType="7">11/30/2016 9:16:18 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6CF724AF-B0CF-4D3D-9164-DE9531B0C97A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="FailCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EA1A631C-2B9D-44A3-B794-07BBBAB0AAD2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="FailPercent">
+      <DTS:VariableValue
+        DTS:DataType="14">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9FB81105-6034-4ECD-83F6-D2AB97BBAF6D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PassCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F44FD243-344B-4C4A-B724-FF4E449B1835}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PassPercent">
+      <DTS:VariableValue
+        DTS:DataType="14">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0F9CF04D-8B3B-4A1D-9C89-AE59A34403B5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PushToR2D2Package">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6A566702-20B9-469F-8177-F27AF574136D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RuleID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{86BA9C22-67F8-4538-BB03-202D2D97B70B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RuleStatus">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0A8E7062-ABAA-465B-AD5B-6DD68134E27C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="runid">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C527EB94-ED20-4484-93E6-6FC14C66D10B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RunStatus">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BA9F0B86-0D05-4430-9265-4F88EE1C7A3D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceConn1">
+      <DTS:VariableValue
+        DTS:DataType="8">Data Source=.;Initial Catalog=REMS_DEV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A5FFBB73-4632-4A0A-A613-E55F1E4277E2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StartDT">
+      <DTS:VariableValue
+        DTS:DataType="7">11/30/2016 9:16:14 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DFD64B42-AF95-44F1-A6C5-3FBF94C7A9FD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TotalRows">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute Rule"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{5DE932C6-4D73-4FF4-8E1D-53F5ACE340EC}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute Rule">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Execute Rule\End Time"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{6531586D-C29B-4E3F-8643-EC3B7D58F149}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="End Time"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::EndDT] =  GETDATE()" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Execute Rule\Rule Logic"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{f8c989ea-76a6-4e67-97e1-8c76f595c2d7}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Rule Logic"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Execute Rule\Rule Logic\Conditional Split"
+                  componentClassID="{7F88F654-4E20-4D14-84F4-AF9C925D3087}"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Conditional Split"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input].Columns[EventClosedDateTime]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="EventClosedDateTime"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventClosedDateTime]" />
+                        <inputColumn
+                          refId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input].Columns[SystemClosedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="SystemClosedDate"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]" />
+                        <inputColumn
+                          refId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input].Columns[EventSystemCode]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="EventSystemCode"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventSystemCode]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Execute Rule\Rule Logic\Conditional Split.Outputs[Complaince]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Complaince"
+                      synchronousInputId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventClosedDateTime]},0) == [REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]},1) &amp;&amp; [ISNULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventSystemCode]}) ==  FALSE </property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(EventClosedDateTime,0) == REPLACENULL(SystemClosedDate,1) &amp;&amp; ISNULL(EventSystemCode) ==  FALSE </property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Execute Rule\Rule Logic\Conditional Split.Outputs[NC]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="NC"
+                      synchronousInputId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Execute Rule\Rule Logic\Conditional Split.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Execute Rule\Rule Logic\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Execute Rule\Rule Logic\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Execute Rule\Rule Logic\Fail Count"
+                  componentClassID="{E2697D8C-70DA-42B2-8208-A19CE3A9FE41}"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Fail Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::FailCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Execute Rule\Rule Logic\Fail Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Execute Rule\Rule Logic\Fail Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Execute Rule\Rule Logic\Fail Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Execute Rule\Rule Logic\Pass Count"
+                  componentClassID="{E2697D8C-70DA-42B2-8208-A19CE3A9FE41}"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Pass Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::PassCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Execute Rule\Rule Logic\Pass Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Execute Rule\Rule Logic\Pass Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Execute Rule\Rule Logic\Pass Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Execute Rule\Rule Logic\REMS Event Data"
+                  componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="REMS Event Data"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">Event</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Execute Rule\Rule Logic\REMS Event Data.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.REMS_DEV]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.REMS_DEV]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventID]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventID]"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventID]"
+                          name="EventID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SubSiteCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[SubSiteCode]"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SubSiteCode]"
+                          name="SubSiteCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventTypeCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventTypeCode]"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventTypeCode]"
+                          name="EventTypeCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventDateTime]"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]"
+                          name="EventDateTime"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Equipment]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[Equipment]"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Equipment]"
+                          name="Equipment"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[OperatorName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[OperatorName]"
+                          length="200"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[OperatorName]"
+                          name="OperatorName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SMU]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[SMU]"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SMU]"
+                          name="SMU"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EquipmentTypeCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EquipmentTypeCode]"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EquipmentTypeCode]"
+                          name="EquipmentTypeCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[FaultCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[FaultCode]"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[FaultCode]"
+                          name="FaultCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[StatusCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[StatusCode]"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[StatusCode]"
+                          name="StatusCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventSourceCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventSourceCode]"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventSourceCode]"
+                          name="EventSourceCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[CauseCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[CauseCode]"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[CauseCode]"
+                          name="CauseCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventSystemCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventSystemCode]"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventSystemCode]"
+                          name="EventSystemCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[AreaCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[AreaCode]"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[AreaCode]"
+                          name="AreaCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Reason]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[Reason]"
+                          length="500"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Reason]"
+                          name="Reason"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventClosedDateTime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventClosedDateTime]"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventClosedDateTime]"
+                          name="EventClosedDateTime"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[LastComment]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[LastComment]"
+                          length="1000"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[LastComment]"
+                          name="LastComment"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[LastActionedby]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[LastActionedby]"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[LastActionedby]"
+                          name="LastActionedby"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SAPNotificationNumber]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[SAPNotificationNumber]"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SAPNotificationNumber]"
+                          name="SAPNotificationNumber"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SAPWorkOrder]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[SAPWorkOrder]"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SAPWorkOrder]"
+                          name="SAPWorkOrder"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[ActivityTypeCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[ActivityTypeCode]"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[ActivityTypeCode]"
+                          name="ActivityTypeCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[FunctionalLevel1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[FunctionalLevel1]"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[FunctionalLevel1]"
+                          name="FunctionalLevel1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[FunctionalLevel2]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[FunctionalLevel2]"
+                          length="50"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[FunctionalLevel2]"
+                          name="FunctionalLevel2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[FunctionalLevel3]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[FunctionalLevel3]"
+                          length="50"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[FunctionalLevel3]"
+                          name="FunctionalLevel3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[FunctionalLevel4]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[FunctionalLevel4]"
+                          length="50"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[FunctionalLevel4]"
+                          name="FunctionalLevel4"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[FunctionalLocation]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[FunctionalLocation]"
+                          length="250"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[FunctionalLocation]"
+                          name="FunctionalLocation"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[FunctionalDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[FunctionalDescription]"
+                          length="200"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[FunctionalDescription]"
+                          name="FunctionalDescription"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[CreatedBy]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedBy]"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[CreatedBy]"
+                          name="CreatedBy"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[CreatedDateTime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedDateTime]"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[CreatedDateTime]"
+                          name="CreatedDateTime"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[ModifiedBy]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[ModifiedBy]"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[ModifiedBy]"
+                          name="ModifiedBy"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[ModifiedDateTime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDateTime]"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[ModifiedDateTime]"
+                          name="ModifiedDateTime"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[ExpectedClosedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[ExpectedClosedDate]"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[ExpectedClosedDate]"
+                          name="ExpectedClosedDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[SystemClosedDate]"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]"
+                          name="SystemClosedDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[latitude]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[latitude]"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[latitude]"
+                          name="latitude"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[longitude]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[longitude]"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[longitude]"
+                          name="longitude"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Elevation]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[Elevation]"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Elevation]"
+                          name="Elevation"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Location]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[Location]"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Location]"
+                          name="Location"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventID]"
+                          dataType="guid"
+                          name="EventID" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[SubSiteCode]"
+                          dataType="wstr"
+                          length="20"
+                          name="SubSiteCode" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventTypeCode]"
+                          dataType="wstr"
+                          length="20"
+                          name="EventTypeCode" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventDateTime]"
+                          dataType="dbTimeStamp"
+                          name="EventDateTime" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[Equipment]"
+                          dataType="wstr"
+                          length="100"
+                          name="Equipment" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[OperatorName]"
+                          dataType="wstr"
+                          length="200"
+                          name="OperatorName" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[SMU]"
+                          dataType="wstr"
+                          length="100"
+                          name="SMU" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EquipmentTypeCode]"
+                          dataType="wstr"
+                          length="20"
+                          name="EquipmentTypeCode" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[FaultCode]"
+                          dataType="wstr"
+                          length="20"
+                          name="FaultCode" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[StatusCode]"
+                          dataType="wstr"
+                          length="20"
+                          name="StatusCode" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventSourceCode]"
+                          dataType="wstr"
+                          length="20"
+                          name="EventSourceCode" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[CauseCode]"
+                          dataType="wstr"
+                          length="20"
+                          name="CauseCode" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventSystemCode]"
+                          dataType="wstr"
+                          length="20"
+                          name="EventSystemCode" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[AreaCode]"
+                          dataType="wstr"
+                          length="20"
+                          name="AreaCode" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[Reason]"
+                          dataType="wstr"
+                          length="500"
+                          name="Reason" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventClosedDateTime]"
+                          dataType="dbTimeStamp"
+                          name="EventClosedDateTime" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[LastComment]"
+                          dataType="wstr"
+                          length="1000"
+                          name="LastComment" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[LastActionedby]"
+                          dataType="wstr"
+                          length="100"
+                          name="LastActionedby" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[SAPNotificationNumber]"
+                          dataType="wstr"
+                          length="100"
+                          name="SAPNotificationNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[SAPWorkOrder]"
+                          dataType="wstr"
+                          length="100"
+                          name="SAPWorkOrder" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[ActivityTypeCode]"
+                          dataType="wstr"
+                          length="20"
+                          name="ActivityTypeCode" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[FunctionalLevel1]"
+                          dataType="wstr"
+                          length="100"
+                          name="FunctionalLevel1" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[FunctionalLevel2]"
+                          dataType="wstr"
+                          length="50"
+                          name="FunctionalLevel2" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[FunctionalLevel3]"
+                          dataType="wstr"
+                          length="50"
+                          name="FunctionalLevel3" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[FunctionalLevel4]"
+                          dataType="wstr"
+                          length="50"
+                          name="FunctionalLevel4" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[FunctionalLocation]"
+                          dataType="wstr"
+                          length="250"
+                          name="FunctionalLocation" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[FunctionalDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="FunctionalDescription" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedBy]"
+                          dataType="wstr"
+                          length="100"
+                          name="CreatedBy" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedDateTime]"
+                          dataType="dbTimeStamp"
+                          name="CreatedDateTime" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[ModifiedBy]"
+                          dataType="wstr"
+                          length="100"
+                          name="ModifiedBy" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDateTime]"
+                          dataType="dbTimeStamp"
+                          name="ModifiedDateTime" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[ExpectedClosedDate]"
+                          dataType="dbTimeStamp"
+                          name="ExpectedClosedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[SystemClosedDate]"
+                          dataType="dbTimeStamp"
+                          name="SystemClosedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[latitude]"
+                          dataType="i4"
+                          name="latitude" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[longitude]"
+                          dataType="i4"
+                          name="longitude" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[Elevation]"
+                          dataType="i4"
+                          name="Elevation" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[Location]"
+                          dataType="wstr"
+                          length="100"
+                          name="Location" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventID]"
+                          dataType="guid"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventID]"
+                          name="EventID" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[SubSiteCode]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[SubSiteCode]"
+                          name="SubSiteCode" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventTypeCode]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventTypeCode]"
+                          name="EventTypeCode" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventDateTime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventDateTime]"
+                          name="EventDateTime" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[Equipment]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[Equipment]"
+                          name="Equipment" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[OperatorName]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[OperatorName]"
+                          name="OperatorName" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[SMU]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[SMU]"
+                          name="SMU" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EquipmentTypeCode]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EquipmentTypeCode]"
+                          name="EquipmentTypeCode" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[FaultCode]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[FaultCode]"
+                          name="FaultCode" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[StatusCode]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[StatusCode]"
+                          name="StatusCode" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventSourceCode]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventSourceCode]"
+                          name="EventSourceCode" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[CauseCode]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[CauseCode]"
+                          name="CauseCode" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventSystemCode]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventSystemCode]"
+                          name="EventSystemCode" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[AreaCode]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[AreaCode]"
+                          name="AreaCode" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[Reason]"
+                          dataType="wstr"
+                          length="500"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[Reason]"
+                          name="Reason" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventClosedDateTime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventClosedDateTime]"
+                          name="EventClosedDateTime" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[LastComment]"
+                          dataType="wstr"
+                          length="1000"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[LastComment]"
+                          name="LastComment" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[LastActionedby]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[LastActionedby]"
+                          name="LastActionedby" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[SAPNotificationNumber]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[SAPNotificationNumber]"
+                          name="SAPNotificationNumber" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[SAPWorkOrder]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[SAPWorkOrder]"
+                          name="SAPWorkOrder" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ActivityTypeCode]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ActivityTypeCode]"
+                          name="ActivityTypeCode" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[FunctionalLevel1]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[FunctionalLevel1]"
+                          name="FunctionalLevel1" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[FunctionalLevel2]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[FunctionalLevel2]"
+                          name="FunctionalLevel2" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[FunctionalLevel3]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[FunctionalLevel3]"
+                          name="FunctionalLevel3" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[FunctionalLevel4]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[FunctionalLevel4]"
+                          name="FunctionalLevel4" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[FunctionalLocation]"
+                          dataType="wstr"
+                          length="250"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[FunctionalLocation]"
+                          name="FunctionalLocation" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[FunctionalDescription]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[FunctionalDescription]"
+                          name="FunctionalDescription" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[CreatedBy]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[CreatedBy]"
+                          name="CreatedBy" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[CreatedDateTime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[CreatedDateTime]"
+                          name="CreatedDateTime" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ModifiedBy]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ModifiedBy]"
+                          name="ModifiedBy" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ModifiedDateTime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ModifiedDateTime]"
+                          name="ModifiedDateTime" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ExpectedClosedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ExpectedClosedDate]"
+                          name="ExpectedClosedDate" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[SystemClosedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[SystemClosedDate]"
+                          name="SystemClosedDate" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[latitude]"
+                          dataType="i4"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[latitude]"
+                          name="latitude" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[longitude]"
+                          dataType="i4"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[longitude]"
+                          name="longitude" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[Elevation]"
+                          dataType="i4"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[Elevation]"
+                          name="Elevation" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[Location]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[Location]"
+                          name="Location" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Execute Rule\Rule Logic\Row Count"
+                  componentClassID="{E2697D8C-70DA-42B2-8208-A19CE3A9FE41}"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::TotalRows</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Execute Rule\Rule Logic\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Execute Rule\Rule Logic\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Execute Rule\Rule Logic\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Execute Rule\Rule Logic.Paths[Complaince]"
+                  endId="Package\Execute Rule\Rule Logic\Pass Count.Inputs[Row Count Input 1]"
+                  name="Complaince"
+                  startId="Package\Execute Rule\Rule Logic\Conditional Split.Outputs[Complaince]" />
+                <path
+                  refId="Package\Execute Rule\Rule Logic.Paths[NC]"
+                  endId="Package\Execute Rule\Rule Logic\Fail Count.Inputs[Row Count Input 1]"
+                  name="NC"
+                  startId="Package\Execute Rule\Rule Logic\Conditional Split.Outputs[NC]" />
+                <path
+                  refId="Package\Execute Rule\Rule Logic.Paths[OLE DB Source Output]"
+                  endId="Package\Execute Rule\Rule Logic\Row Count.Inputs[Row Count Input 1]"
+                  name="OLE DB Source Output"
+                  startId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Execute Rule\Rule Logic.Paths[Row Count Output 1]"
+                  endId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Execute Rule\Rule Logic\Row Count.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Execute Rule\StartTime"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{B9EE0319-0F1F-4CC7-8342-B0AA87614142}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="StartTime"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::StartDT] =  GETDATE()" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Execute Rule.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{14BE0A5D-3B31-432B-B810-1855B87CE66E}"
+          DTS:From="Package\Execute Rule\StartTime"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Execute Rule\Rule Logic" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Execute Rule.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{86B2A157-00E1-4706-8D13-331634617060}"
+          DTS:From="Package\Execute Rule\Rule Logic"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Execute Rule\End Time" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Failure Status"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Expression Task"
+      DTS:DTSID="{B1FF47BF-11FC-46B3-B892-58162827118C}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Failure Status"
+      DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExpressionTask
+          Expression="@[User::RunStatus] = 0" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Push Results to R2D2 Model"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{F8FF0289-804D-4910-BDC6-CE2DC195D958}"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Push Results to R2D2 Model"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <Connection>{84C20C8E-FF67-412A-B1AC-B907B8EB42AF}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Success Status"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Expression Task"
+      DTS:DTSID="{F01A176D-1EA5-4773-8E19-F7FF203D979F}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Success Status"
+      DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExpressionTask
+          Expression="@[User::RunStatus] = 1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{77DEBBFE-22CF-4784-8395-2D1FD5EF696E}"
+      DTS:From="Package\Success Status"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Push Results to R2D2 Model" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B62AB8FF-2A5F-4B5E-81F4-DA2D53D6E11D}"
+      DTS:From="Package\Execute Rule"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Success Status" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{0E3B3CE1-4E56-4B39-A809-BC5897A82353}"
+      DTS:From="Package\Execute Rule"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Failure Status"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{E745864B-3E73-438A-8AE7-EC2706459191}"
+      DTS:From="Package\Failure Status"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Push Results to R2D2 Model" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\Execute Rule\End Time"
+          TopLeft="7.10000000000003,208.7" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Execute Rule\Rule Logic"
+          TopLeft="5.50000000000003,107.1" />
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\Execute Rule\StartTime"
+          TopLeft="7.10000000000002,5.49999999999995" />
+        <EdgeLayout
+          Id="Package\Execute Rule.PrecedenceConstraints[Constraint]"
+          TopLeft="68.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Execute Rule.PrecedenceConstraints[Constraint 1]"
+          TopLeft="68.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="150.4,305.6"
+          Size="137.6,348.8"
+          Id="Package\Execute Rule"
+          TopLeft="215.3,5.49999999999997" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Failure Status"
+          TopLeft="212.9,414.3" />
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\Push Results to R2D2 Model"
+          TopLeft="179.3,515.9" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Success Status"
+          TopLeft="5.50000000000006,414.3" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="79.1000000000001,455.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="171.4,60.0000000000001"
+              Start="0,0"
+              End="171.4,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7272727272728" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.7272727272728"
+                    Point2="0,35.7272727272728"
+                    Point3="4,35.7272727272728" />
+                  <mssgle:LineSegment
+                    End="167.4,35.7272727272728" />
+                  <mssgle:CubicBezierSegment
+                    Point1="167.4,35.7272727272728"
+                    Point2="171.4,35.7272727272728"
+                    Point3="171.4,39.7272727272728" />
+                  <mssgle:LineSegment
+                    End="171.4,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="262.5,354.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-183.4,59.9999999999999"
+              Start="0,0"
+              End="-183.4,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4137931034482" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.4137931034482"
+                    Point2="0,24.4137931034482"
+                    Point3="-4,24.4137931034482" />
+                  <mssgle:LineSegment
+                    End="-179.4,24.4137931034482" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-179.4,24.4137931034482"
+                    Point2="-183.4,24.4137931034482"
+                    Point3="-183.4,28.4137931034482" />
+                  <mssgle:LineSegment
+                    End="-183.4,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="305.7,354.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21.5999999999999,59.9999999999999"
+              Start="0,0"
+              End="-21.5999999999999,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4137931034483" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.4137931034483"
+                    Point2="0,24.4137931034483"
+                    Point3="-4,24.4137931034483" />
+                  <mssgle:LineSegment
+                    End="-17.5999999999999,24.4137931034483" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.5999999999999,24.4137931034483"
+                    Point2="-21.5999999999999,24.4137931034483"
+                    Point3="-21.5999999999999,28.4137931034483" />
+                  <mssgle:LineSegment
+                    End="-21.5999999999999,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-26.04134765625,29.4137931034483,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="284.1,455.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.6,60.0000000000001"
+              Start="0,0"
+              End="33.6,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7272727272728" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.7272727272728"
+                    Point2="0,35.7272727272728"
+                    Point3="4,35.7272727272728" />
+                  <mssgle:LineSegment
+                    End="29.6,35.7272727272728" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.6,35.7272727272728"
+                    Point2="33.6,35.7272727272728"
+                    Point3="33.6,39.7272727272728" />
+                  <mssgle:LineSegment
+                    End="33.6,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Execute Rule\Rule Logic">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Execute Rule\Rule Logic\Pass Count"
+          TopLeft="280.8,262.4" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Execute Rule\Rule Logic\Row Count"
+          TopLeft="127.771430760987,185.176473196485" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Execute Rule\Rule Logic\REMS Event Data"
+          TopLeft="93.4857158913904,72.6117657354546" />
+        <NodeLayout
+          Size="124.8,41.6"
+          Id="Package\Execute Rule\Rule Logic\Fail Count"
+          TopLeft="504.8,276.8" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Execute Rule\Rule Logic\Conditional Split"
+          TopLeft="428,177.6" />
+        <EdgeLayout
+          Id="Package\Execute Rule\Rule Logic.Paths[Row Count Output 1]"
+          TopLeft="257.371430760987,202.188236598242">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="170.628569239013,0"
+              Start="0,0"
+              End="163.128569239013,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="163.128569239013,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Execute Rule\Rule Logic.Paths[OLE DB Source Output]"
+          TopLeft="173.48571589139,114.211765735455">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.0857148695966,70.9647074610304"
+              Start="0,0"
+              End="19.0857148695966,63.4647074610304">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.4823537305152" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.4823537305152"
+                    Point2="0,35.4823537305152"
+                    Point3="4,35.4823537305152" />
+                  <mssgle:LineSegment
+                    End="15.0857148695966,35.4823537305152" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.0857148695966,35.4823537305152"
+                    Point2="19.0857148695966,35.4823537305152"
+                    Point3="19.0857148695966,39.4823537305152" />
+                  <mssgle:LineSegment
+                    End="19.0857148695966,63.4647074610304" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Execute Rule\Rule Logic.Paths[NC]"
+          TopLeft="529.066666666667,219.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="38.1333333333333,57.6"
+              Start="0,0"
+              End="38.1333333333333,50.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3962886597938" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.3962886597938"
+                    Point2="0,23.3962886597938"
+                    Point3="4,23.3962886597938" />
+                  <mssgle:LineSegment
+                    End="34.1333333333333,23.3962886597938" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.1333333333333,23.3962886597938"
+                    Point2="38.1333333333333,23.3962886597938"
+                    Point3="38.1333333333333,27.3962886597938" />
+                  <mssgle:LineSegment
+                    End="38.1333333333333,50.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="12.1803971354166,28.3962886597938,13.7725390625,9.5341796875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Execute Rule\Rule Logic.Paths[Complaince]"
+          TopLeft="504.8,219.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-159.2,43.2"
+              Start="0,0"
+              End="-159.2,35.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.6"
+                    Point2="0,21.6"
+                    Point3="-4,21.6" />
+                  <mssgle:LineSegment
+                    End="-155.2,21.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-155.2,21.6"
+                    Point2="-159.2,21.6"
+                    Point3="-159.2,25.6" />
+                  <mssgle:LineSegment
+                    End="-159.2,35.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-105.6338671875,26.6,52.067734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
