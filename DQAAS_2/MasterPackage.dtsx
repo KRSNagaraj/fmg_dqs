@@ -13,8 +13,8 @@
   DTS:ObjectName="MasterPackage"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{1DB29A8A-35BA-4EB2-815B-3704905394DD}">
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{57B68C90-D663-4CE0-B0D5-9CCD351DE7B6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -482,7 +482,7 @@
           PanelSize="204.8,511.2"
           Size="204.8,554.4"
           Id="Package\DQS Rules"
-          TopLeft="97.5000015667507,102.205882430159" />
+          TopLeft="5.50000000000006,5.50000000000006" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
