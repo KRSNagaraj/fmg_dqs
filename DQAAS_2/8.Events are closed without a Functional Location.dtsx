@@ -5,7 +5,7 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="BASCOEVM-SS"
   DTS:CreatorName="BASCOEVM-SS\N"
-  DTS:DTSID="{E12155CA-196F-4169-9500-C20BDAACF7AB}"
+  DTS:DTSID="{2BE9B05D-C12F-42EA-926C-17941C57A934}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.6020.0"
@@ -13,15 +13,15 @@
   DTS:ObjectName="8 Events are closed without a Functional Location"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{96E31615-5D95-4077-9365-A79B894D5FDD}">
+  DTS:VersionBuild="67"
+  DTS:VersionGUID="{8E912685-A98C-443D-99E7-5AF26435A672}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.REMS_DEV]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{3A347B32-66C8-4427-8B44-D08CC3254115}"
+      DTS:DTSID="{08B7DC00-D967-4B4B-BA97-5E2FC50C6AE0}"
       DTS:ObjectName="LocalHost.REMS_DEV">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::SourceConn1]</DTS:PropertyExpression>
@@ -34,7 +34,7 @@
       DTS:refId="Package.ConnectionManagers[PushResultstoR2D2Model.dtsx]"
       DTS:CreationName="FILE"
       DTS:DelayValidation="True"
-      DTS:DTSID="{C994632F-1593-4FCC-8914-1D6CAF1A1F4F}"
+      DTS:DTSID="{62EE8095-EF94-4818-85B2-0214C6A2D044}"
       DTS:ObjectName="PushResultstoR2D2Model.dtsx">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::PushToR2D2Package]</DTS:PropertyExpression>
@@ -48,52 +48,71 @@
       DTS:ConfigurationString="User::runid"
       DTS:ConfigurationVariable="\Package.Variables[User::runid].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{2BB68EF3-2C86-47E4-93B7-3C9827CE049A}"
+      DTS:DTSID="{521D4846-D85A-436D-887F-F8471DCDDBF1}"
       DTS:ObjectName="RunID" />
     <DTS:Configuration
       DTS:ConfigurationString="User::DQS_Server"
       DTS:ConfigurationVariable="\Package.Variables[User::DQS_Server].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{004B666C-751F-454D-98E7-1CC6F557F7B2}"
+      DTS:DTSID="{017108B5-C606-4AC1-83E9-8E4C51D9E05E}"
       DTS:ObjectName="Server" />
     <DTS:Configuration
       DTS:ConfigurationString="User::DQS_Pwd"
       DTS:ConfigurationVariable="\Package.Variables[User::DQS_Pwd].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{74AFD9A9-21BA-4515-9DE0-B9FF21D314C2}"
+      DTS:DTSID="{51DF4751-AC7E-4370-9A08-C02940B8151B}"
       DTS:ObjectName="Password" />
     <DTS:Configuration
       DTS:ConfigurationString="User::DQS_User"
       DTS:ConfigurationVariable="\Package.Variables[User::DQS_User].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{E063D649-AE27-4C61-940F-DF31EC9DC788}"
+      DTS:DTSID="{8AC16466-0CEE-45E1-A6A6-C43E50517FE9}"
       DTS:ObjectName="UserName" />
     <DTS:Configuration
       DTS:ConfigurationString="User::RuleID"
       DTS:ConfigurationVariable="\Package.Variables[User::RuleID].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{141918CF-17C4-4916-80B8-1B6BF7D73342}"
+      DTS:DTSID="{BFBF9EAC-8565-4DB6-BBFF-ABD3CEBBD4E0}"
       DTS:ObjectName="RuleID" />
     <DTS:Configuration
       DTS:ConfigurationString="User::PushToR2D2Package"
       DTS:ConfigurationVariable="\Package.Variables[User::PushToR2D2Package].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{26990009-7284-4CA1-9BCD-5AF721C8FE90}"
+      DTS:DTSID="{B7EF4C4D-6B42-4861-9BC7-CDAAF1E29EA0}"
       DTS:ObjectName="PushToR2D2Package" />
+    <DTS:Configuration
+      DTS:ConfigurationString="User::DQS_DB"
+      DTS:ConfigurationVariable="\Package.Variables[User::DQS_DB].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{79779EC8-DD92-4017-A69A-19B2A4DB09AA}"
+      DTS:ObjectName="DQS_DB" />
+    <DTS:Configuration
+      DTS:ConfigurationString="User::SourceConn1"
+      DTS:ConfigurationVariable="\Package.Variables[User::SourceConn1].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{95821F05-120C-4156-8271-4EE145AFB879}"
+      DTS:ObjectName="SourceConn1" />
+    <DTS:Configuration
+      DTS:ConfigurationString="User::SourceConn2"
+      DTS:ConfigurationVariable="\Package.Variables[User::SourceConn2].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{D9DA61EE-F2DB-45D6-ACF0-023972E51BF1}"
+      DTS:ObjectName="SourceConn2" />
   </DTS:Configurations>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7ABADD8F-2222-4F16-92D0-8C8217B173CB}"
+      DTS:DTSID="{95484F36-2C46-49FF-BD74-21BDB200BF07}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DQS_DB">
       <DTS:VariableValue
-        DTS:DataType="8">FMG_DQ_Services</DTS:VariableValue>
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D87EC589-F344-4DE4-983C-1C2D44C013B3}"
+      DTS:DTSID="{F06CA479-0645-4CEE-BD76-9DE286790642}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DQS_Pwd">
@@ -102,7 +121,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4D9B6339-69FD-4820-9C21-9FFBE6E7AB03}"
+      DTS:DTSID="{B6E18797-482C-4E39-A2FF-E5A4A1BE486E}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DQS_Server">
@@ -111,7 +130,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8F6E9382-7629-4D9D-BA8A-4EC69AFC1327}"
+      DTS:DTSID="{F4806667-35E8-4834-95A4-07477AB40D4D}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DQS_User">
@@ -120,7 +139,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D6C1D973-1BD2-4B81-87B0-68C040649421}"
+      DTS:DTSID="{D11CD550-526F-48DE-A72F-ED5F2C5E7527}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="EndDT">
@@ -129,7 +148,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{9D55B914-2039-4697-9EBA-6D03DB65042E}"
+      DTS:DTSID="{34357DBD-6059-4DC4-986E-B6294BD31C73}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="FailCount">
@@ -138,7 +157,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{9FD2CC2C-AA74-4340-A001-14BD0C8F75DE}"
+      DTS:DTSID="{7F19F9EE-EB53-45C2-9E0C-DFB52292A3CA}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="FailPercent">
@@ -147,7 +166,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A77BE87F-92CC-45A6-9143-B7804D222A85}"
+      DTS:DTSID="{FCBD60CE-78D0-4A0E-AE2A-5E195F2933BF}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="PassCount">
@@ -156,7 +175,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B5AE146B-FA0C-4D3E-87BE-BE74C0C0D19C}"
+      DTS:DTSID="{49A63F76-8695-4CE3-818C-2E899E4F60FE}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="PassPercent">
@@ -165,7 +184,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D3C9A6D1-E173-48F2-9C87-62AD967D1BAE}"
+      DTS:DTSID="{B856EA93-0FD8-4868-8953-6D5C92FBC5D8}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PushToR2D2Package">
@@ -175,7 +194,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C414539F-E4BC-45F9-A459-6F4EF837CEC1}"
+      DTS:DTSID="{42343AB7-1C12-4163-A55C-934EBEF5A4CD}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RuleID">
@@ -184,7 +203,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{371CDED9-4B40-4385-8368-6411E8278223}"
+      DTS:DTSID="{FC151BB8-F689-46E5-9CEC-0BA7E455E889}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="RuleStatus">
@@ -193,7 +212,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{06B70B05-A664-4087-BD2E-BE116D4A5872}"
+      DTS:DTSID="{CE4010F3-1F14-43B5-9DAA-155D93C1BD5C}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="runid">
@@ -202,7 +221,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5C7DFE7D-8F59-4A5B-9B58-409B4A46B03B}"
+      DTS:DTSID="{17809C6C-B23F-4B8E-9AE1-A801A1A23AFF}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RunStatus">
@@ -211,7 +230,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D13E194F-D391-47AD-9460-3B14B44964A3}"
+      DTS:DTSID="{CE933158-34B9-4B86-B6D9-6D7154B05C46}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceConn1">
@@ -220,7 +239,16 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2C98A2EA-4187-4340-A6D6-86CD02802B15}"
+      DTS:DTSID="{DCAB5F3C-A9C8-4296-8A3E-4E0F6165E781}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceConn2">
+      <DTS:VariableValue
+        DTS:DataType="8">Data Source=.;Initial Catalog=REMS_DEV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{21D596F6-2F6B-4B9E-A621-7C45F1500A57}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="StartDT">
@@ -229,7 +257,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C789E4FF-C519-40EB-B83F-AB48F760936E}"
+      DTS:DTSID="{35DA3E0E-E74D-477D-9A6B-105FB0138DEC}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="TotalRows">
@@ -242,7 +270,7 @@
       DTS:refId="Package\Execute Rule"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{AC84C96A-8C30-472B-A09B-89777EF4933A}"
+      DTS:DTSID="{D22C7061-556B-4C02-BCAC-12499AE79163}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute Rule">
@@ -252,7 +280,7 @@
           DTS:refId="Package\Execute Rule\End Time"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Expression Task"
-          DTS:DTSID="{D8A62F4C-A706-4437-A4BC-AB24101D63FB}"
+          DTS:DTSID="{CE81AF9C-0D65-49A6-ABFE-84AFC85FF894}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="End Time"
@@ -268,7 +296,7 @@
           DTS:refId="Package\Execute Rule\Rule Logic"
           DTS:CreationName="SSIS.Pipeline.3"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{43C340D0-AA29-49CD-9CE5-3D717BB740D1}"
+          DTS:DTSID="{64C99340-34AB-4F96-BF40-D7312255CCD6}"
           DTS:ExecutableType="SSIS.Pipeline.3"
           DTS:LocaleID="-1"
           DTS:ObjectName="Rule Logic"
@@ -1325,7 +1353,7 @@
           DTS:refId="Package\Execute Rule\StartTime"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Expression Task"
-          DTS:DTSID="{9636A63D-8099-4E93-83EB-A0C5C776767C}"
+          DTS:DTSID="{98A9B96D-C2AA-4C79-ADA3-63ED4D72AA42}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="StartTime"
@@ -1342,7 +1370,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Execute Rule.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{C1AEF566-6292-40C6-BEEE-17C96F8CAE22}"
+          DTS:DTSID="{5D819ECD-0272-4B27-95A1-AD29498DED1D}"
           DTS:From="Package\Execute Rule\StartTime"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -1350,7 +1378,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Execute Rule.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{6AF0EC20-7023-46F8-B39A-42CD2B0CB1D5}"
+          DTS:DTSID="{BD489986-8B84-4DC8-926B-08B70E1A603B}"
           DTS:From="Package\Execute Rule\Rule Logic"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -1361,7 +1389,7 @@
       DTS:refId="Package\Failure Status"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Expression Task"
-      DTS:DTSID="{EF4C15E6-1A74-4B4A-A664-62439ED5D144}"
+      DTS:DTSID="{373C055D-B959-4AB8-9845-0C30CD19B905}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Failure Status"
@@ -1377,7 +1405,7 @@
       DTS:refId="Package\Push Results to R2D2 Model"
       DTS:CreationName="SSIS.ExecutePackageTask.3"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{C30876F1-9D49-476B-980F-E3570F27426C}"
+      DTS:DTSID="{1756D05F-82D9-4726-81F2-B4D24AFC9788}"
       DTS:ExecutableType="SSIS.ExecutePackageTask.3"
       DTS:LocaleID="-1"
       DTS:ObjectName="Push Results to R2D2 Model"
@@ -1385,7 +1413,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
-          <Connection>{C994632F-1593-4FCC-8914-1D6CAF1A1F4F}</Connection>
+          <Connection>{62EE8095-EF94-4818-85B2-0214C6A2D044}</Connection>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1393,7 +1421,7 @@
       DTS:refId="Package\Success Status"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Expression Task"
-      DTS:DTSID="{ED97510C-8F22-40CD-94D1-173BE244D1D0}"
+      DTS:DTSID="{924317A1-ABFE-4BF4-B965-A5FE32D9CD26}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Success Status"
@@ -1410,14 +1438,14 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{6AB1A57B-FC8C-41F6-80CB-904AD2035639}"
+      DTS:DTSID="{B0E03831-660F-4AAB-95B1-2A3B92E7F232}"
       DTS:From="Package\Success Status"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Push Results to R2D2 Model" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{F8863925-3924-49EA-AB68-1AB2BE93F99D}"
+      DTS:DTSID="{8455AA0A-4738-4C9E-A5D4-A5C9AD9824F3}"
       DTS:From="Package\Execute Rule"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -1425,7 +1453,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{30B6B6C6-973C-4B25-B092-083E8BECE77D}"
+      DTS:DTSID="{C164EDFA-A70C-46C5-93BC-7E8B4C6930C8}"
       DTS:From="Package\Execute Rule"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -1434,7 +1462,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{5D51A591-E2D7-4589-805E-C27A0A302D0C}"
+      DTS:DTSID="{BB66EE3F-B399-4002-9027-688947967BA0}"
       DTS:From="Package\Failure Status"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Push Results to R2D2 Model" />
@@ -1469,14 +1497,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1511,7 +1539,7 @@
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="150.4,305.6"
-          Size="137.6,348.8"
+          Size="150.4,348.8"
           Id="Package\Execute Rule"
           TopLeft="225.585714460879,9.78235300123484" />
         <NodeLayout

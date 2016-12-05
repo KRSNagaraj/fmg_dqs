@@ -13,8 +13,8 @@
   DTS:ObjectName="MasterPackage"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="47"
-  DTS:VersionGUID="{482F2874-8EE7-41ED-86F6-86E00AC6AD26}">
+  DTS:VersionBuild="62"
+  DTS:VersionGUID="{DE056108-6A02-4145-A6B6-73A3700781D8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -34,7 +34,7 @@
         DTS:Name="UserName">@[User::DQS_User]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=.;User ID=dqs;Initial Catalog=FMG_DQ_Services;Provider=SQLNCLI11.1;Auto Translate=False;">
+          DTS:ConnectionString="Data Source=.;User ID=dqs;Initial Catalog=fmg_dq_services;Provider=SQLNCLI11.1;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"></DTS:Password>
@@ -51,18 +51,10 @@
         DTS:Name="ConnectionString">@[User::PackageDirectory]  + @[User::PackagePath]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="F:\Documents\Visual Studio 2010\Projects\DQAAS_2\DQAAS_2\" />
+          DTS:ConnectionString="F:\Documents\GitHub\fmg_dqs\DQAAS_2\" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Configurations>
-    <DTS:Configuration
-      DTS:ConfigurationString="F:\Documents\Visual Studio 2010\Projects\DQAAS_2\DQAAS_2\MasterPackageConfig.dtsConfig"
-      DTS:ConfigurationType="1"
-      DTS:CreationName=""
-      DTS:DTSID="{17F235C7-EC49-413D-89A0-3F185052AF81}"
-      DTS:ObjectName="Configuration" />
-  </DTS:Configurations>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -71,7 +63,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DQS_DB">
       <DTS:VariableValue
-        DTS:DataType="8">FMG_DQ_Services</DTS:VariableValue>
+        DTS:DataType="8">fmg_dq_services</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -107,7 +99,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="PackageDirectory">
       <DTS:VariableValue
-        DTS:DataType="8">F:\Documents\Visual Studio 2010\Projects\DQAAS_2\DQAAS_2\</DTS:VariableValue>
+        DTS:DataType="8">F:\Documents\GitHub\fmg_dqs\DQAAS_2\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -138,7 +130,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="PushToR2D2Package">
       <DTS:VariableValue
-        DTS:DataType="8">F:\Documents\Visual Studio 2010\Projects\DQAAS_2\DQAAS_2\PushResultstoR2D2Model.dtsx</DTS:VariableValue>
+        DTS:DataType="8">F:\Documents\GitHub\fmg_dqs\DQAAS_2\PushResultstoR2D2Model.dtsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -382,6 +374,53 @@
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{E499B3B6-B4F1-4E13-9025-BB2C5A8BAFBA}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{4CFBBF92-F27F-41C5-9EA5-2CA102FB6741}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Run Status Update"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2c0cee2f-2df2-486e-a173-92f6d58e16fe}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Run Status Update"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9B8D5011-82D8-44BB-A575-3A08F0D49BE9}"
+              SQLTask:SqlStatementSource="Update DQ_PROFILE_RUN_FACT&#xA;set DQ_RUN_Status = 'Failed with Error',&#xA;[DQ_RUN_EndDate] = GETDATE()&#xA;&#xA;where DQ_PROFILE_RUN_KEY = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::runid"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -489,9 +528,21 @@
           PanelSize="204.8,511.2"
           Size="204.8,554.4"
           Id="Package\DQS Rules"
-          TopLeft="97.5000015667507,102.205882430159" />
+          TopLeft="5.50000000000006,5.50000000000006" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package.EventHandlers[OnError]\Run Status Update"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

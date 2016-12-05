@@ -13,8 +13,8 @@
   DTS:ObjectName="1 Events being closed with completeness"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="62"
-  DTS:VersionGUID="{79EF6227-2AE3-44A8-BD1A-8D03B526F10A}">
+  DTS:VersionBuild="64"
+  DTS:VersionGUID="{EE255F41-8621-4D50-BEF1-6DC530D9EC98}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -92,6 +92,12 @@
       DTS:CreationName=""
       DTS:DTSID="{96535F8E-D561-467D-B9FF-09A030D8EA54}"
       DTS:ObjectName="SourceConn1" />
+    <DTS:Configuration
+      DTS:ConfigurationString="User::SourceConn2"
+      DTS:ConfigurationVariable="\Package.Variables[User::SourceConn2].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{04FA6EB5-7829-4E16-8E17-3C0D843BA5D4}"
+      DTS:ObjectName="SourceConn2" />
   </DTS:Configurations>
   <DTS:Variables>
     <DTS:Variable
@@ -228,6 +234,15 @@
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceConn1">
+      <DTS:VariableValue
+        DTS:DataType="8">Data Source=.;Initial Catalog=REMS_DEV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{77957CCF-4C9F-4D14-8082-1A99414CA868}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceConn2">
       <DTS:VariableValue
         DTS:DataType="8">Data Source=.;Initial Catalog=REMS_DEV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
@@ -5462,7 +5477,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Failure Status"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -5494,7 +5509,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Success Status"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
