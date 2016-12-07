@@ -13,8 +13,8 @@
   DTS:ObjectName="MasterPackage"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="64"
-  DTS:VersionGUID="{79F983A7-04A2-4F4D-8E5A-85851C02E257}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{1BC7362D-FF3E-4213-93F0-5945033226FE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -374,7 +374,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{9B8D5011-82D8-44BB-A575-3A08F0D49BE9}"
-              SQLTask:SqlStatementSource="INSERT INTO [dbo].[DQ_PROFILE_RUN_FACT]&#xA;           ([DQ_CAL_KEY]&#xA;           ,[DQ_RUN_StartDate]&#xA;           ,[DQ_RUN_EndDate]&#xA;           ,[DQ_RUN_User]&#xA;           ,[DQ_RUN_Status])&#xA;     VALUES&#xA;           (Year(getdate()) + (Month(getdate()) * 10000) + (day(getdate()) * 10000 * 100)&#xA;           ,getdate()&#xA;           ,null&#xA;           , USER_NAME()&#xA;           ,'Started')&#xA;SELECT ? = SCOPE_IDENTITY()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="INSERT INTO [dbo].[DQ_PROFILE_RUN_FACT]&#xA;           ([DQ_CAL_KEY]&#xA;           ,[DQ_RUN_StartDate]&#xA;           ,[DQ_RUN_EndDate]&#xA;           ,[DQ_RUN_User]&#xA;           ,[DQ_RUN_Status])&#xA;     VALUES&#xA;           (Replace(CONVERT(varchar,GETDATE(),102),'.','')&#xA;           ,getdate()&#xA;           ,null&#xA;           , USER_NAME()&#xA;           ,'Started')&#xA;SELECT ? = SCOPE_IDENTITY()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::runid"

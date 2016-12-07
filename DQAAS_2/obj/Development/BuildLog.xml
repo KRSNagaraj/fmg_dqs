@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DQAAS_2</Name>
-    <LastWriteTime>2016-12-04T18:36:42.2045924Z</LastWriteTime>
+    <LastWriteTime>2016-12-07T09:43:58.5780155Z</LastWriteTime>
     <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>MasterPackage.dtsx</Name>
-      <LastWriteTime>2016-12-07T07:52:46.9210535Z</LastWriteTime>
+      <LastWriteTime>2016-12-07T10:24:56.2643186Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -18,12 +18,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>PushResultstoR2D2Model.dtsx</Name>
-      <LastWriteTime>2016-12-04T10:27:48.7431233Z</LastWriteTime>
-      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
-      <Name>_5.Duration in REMS is same as in JigSaw.dtsx</Name>
-      <LastWriteTime>2016-12-04T18:35:14.4544317Z</LastWriteTime>
+      <LastWriteTime>2016-12-07T10:20:58.7891112Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -32,23 +27,18 @@
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>_8.Events are closed without a Functional Location.dtsx</Name>
-      <LastWriteTime>2016-12-04T18:35:14.422431Z</LastWriteTime>
-      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
       <Name>8.Events are closed without a Functional Location.dtsx</Name>
       <LastWriteTime>2016-12-04T18:41:49.1583112Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>_9. Closed unscheduled events have comments.dtsx</Name>
-      <LastWriteTime>2016-12-02T09:25:25.6421039Z</LastWriteTime>
+      <Name>9. Closed unscheduled events have comments.dtsx</Name>
+      <LastWriteTime>2016-12-05T03:13:52.7479307Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>9. Closed unscheduled events have comments.dtsx</Name>
-      <LastWriteTime>2016-12-05T03:13:52.7479307Z</LastWriteTime>
+      <Name>19.REMS equipment rows have a mapping to a SAP Fn Level 1.dtsx</Name>
+      <LastWriteTime>2016-12-07T10:03:55.9583251Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
