@@ -13,8 +13,8 @@
   DTS:ObjectName="6 REMS Event Start Date is same as in Jigsaw"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{4BE37B00-7389-4DB5-98E0-985BE78D8033}">
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{2C2A630D-B143-4463-8E17-C6071D69C174}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -360,13 +360,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                          name="Expression">[DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[starttime]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]},1)) &gt; -3 &amp;&amp; [DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[starttime]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]},1)) &lt; 3</property>
+                          name="Expression">[DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[starttime]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]},1)) &gt;= -3 &amp;&amp; [DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[starttime]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]},1)) &lt;= 3</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the friendly version of the expression. This expression version uses column names."
                           expressionType="Notify"
-                          name="FriendlyExpression">DATEDIFF("Minute",REPLACENULL(starttime,1),REPLACENULL(EventDateTime,1)) &gt; -3 &amp;&amp; DATEDIFF("Minute",REPLACENULL(starttime,1),REPLACENULL(EventDateTime,1)) &lt; 3</property>
+                          name="FriendlyExpression">DATEDIFF("Minute",REPLACENULL(starttime,1),REPLACENULL(EventDateTime,1)) &gt;= -3 &amp;&amp; DATEDIFF("Minute",REPLACENULL(starttime,1),REPLACENULL(EventDateTime,1)) &lt;= 3</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -1536,17 +1536,21 @@ where EventSystemCode = 'Jigsaw'</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="160,41.6"
+          Id="Package\Execute Rule\Rule Logic\REMS Event Data"
+          TopLeft="60,60" />
+        <NodeLayout
           Size="124.8,41.6"
           Id="Package\Execute Rule\Rule Logic\Fail Count"
           TopLeft="471.31428410861,264.188234264545" />
         <NodeLayout
           Size="129.6,41.6"
-          Id="Package\Execute Rule\Rule Logic\Pass Count"
-          TopLeft="205.028569102774,253.458822551318" />
-        <NodeLayout
-          Size="129.6,41.6"
           Id="Package\Execute Rule\Rule Logic\Row Count"
           TopLeft="94.2857148695966,172.56470746103" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Execute Rule\Rule Logic\Pass Count"
+          TopLeft="205.028569102774,253.458822551318" />
         <NodeLayout
           Size="120,41.6"
           Id="Package\Execute Rule\Rule Logic\Union All"
@@ -1556,85 +1560,9 @@ where EventSystemCode = 'Jigsaw'</property>
           Id="Package\Execute Rule\Rule Logic\Conditional Split"
           TopLeft="282.057147674171,163.764708190311" />
         <NodeLayout
-          Size="160,41.6"
-          Id="Package\Execute Rule\Rule Logic\REMS Event Data"
-          TopLeft="60,60" />
-        <NodeLayout
           Size="112,41.6"
           Id="Package\Execute Rule\Rule Logic\Lookup"
           TopLeft="252.914290035014,21.8352944350985" />
-        <EdgeLayout
-          Id="Package\Execute Rule\Rule Logic.Paths[Lookup No Match Output]"
-          TopLeft="334.914290035014,63.4352944350985">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="206.000003882817,105.223531470909"
-              Start="0,0"
-              End="206.000003882817,97.7235314709093">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.7058830712474" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.7058830712474"
-                    Point2="0,36.7058830712474"
-                    Point3="4,36.7058830712474" />
-                  <mssgle:LineSegment
-                    End="202.000003882817,36.7058830712474" />
-                  <mssgle:CubicBezierSegment
-                    Point1="202.000003882817,36.7058830712474"
-                    Point2="206.000003882817,36.7058830712474"
-                    Point3="206.000003882817,40.7058830712474" />
-                  <mssgle:LineSegment
-                    End="206.000003882817,97.7235314709093" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="47.1936152226585,41.7058830712474,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Execute Rule\Rule Logic.Paths[Compliance]"
-          TopLeft="358.857147674171,205.364708190311">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-89.028578571397,48.094114361007"
-              Start="0,0"
-              End="-89.028578571397,40.594114361007">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.0470571805035" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.0470571805035"
-                    Point2="0,24.0470571805035"
-                    Point3="-4,24.0470571805035" />
-                  <mssgle:LineSegment
-                    End="-85.028578571397,24.0470571805035" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-85.028578571397,24.0470571805035"
-                    Point2="-89.028578571397,24.0470571805035"
-                    Point3="-89.028578571397,28.0470571805035" />
-                  <mssgle:LineSegment
-                    End="-89.028578571397,40.594114361007" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-70.5481564731985,29.0470571805035,52.067734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Execute Rule\Rule Logic.Paths[Union All Output 1]"
           TopLeft="537.314289013221,210.258825906008">
@@ -1726,6 +1654,66 @@ where EventSystemCode = 'Jigsaw'</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Execute Rule\Rule Logic.Paths[NC]"
+          TopLeft="435.657147674171,187.01176704816">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.2571462436599,0"
+              Start="0,0"
+              End="37.7571462436599,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="37.7571462436599,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="11.99230359058,5,13.7725390625,9.5341796875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Execute Rule\Rule Logic.Paths[Lookup No Match Output]"
+          TopLeft="334.914290035014,63.4352944350985">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="206.000003882817,105.223531470909"
+              Start="0,0"
+              End="206.000003882817,97.7235314709093">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.7058830712474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.7058830712474"
+                    Point2="0,36.7058830712474"
+                    Point3="4,36.7058830712474" />
+                  <mssgle:LineSegment
+                    End="202.000003882817,36.7058830712474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="202.000003882817,36.7058830712474"
+                    Point2="206.000003882817,36.7058830712474"
+                    Point3="206.000003882817,40.7058830712474" />
+                  <mssgle:LineSegment
+                    End="206.000003882817,97.7235314709093" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="47.1936152226585,41.7058830712474,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Execute Rule\Rule Logic.Paths[Lookup Match Output]"
           TopLeft="308.914290035014,63.4352944350985">
           <EdgeLayout.Curve>
@@ -1762,26 +1750,38 @@ where EventSystemCode = 'Jigsaw'</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Execute Rule\Rule Logic.Paths[NC]"
-          TopLeft="435.657147674171,187.01176704816">
+          Id="Package\Execute Rule\Rule Logic.Paths[Compliance]"
+          TopLeft="358.857147674171,205.364708190311">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="45.2571462436599,0"
+              EndConnector="-89.028578571397,48.094114361007"
               Start="0,0"
-              End="37.7571462436599,0">
+              End="-89.028578571397,40.594114361007">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="37.7571462436599,0" />
+                    End="0,20.0470571805035" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.0470571805035"
+                    Point2="0,24.0470571805035"
+                    Point3="-4,24.0470571805035" />
+                  <mssgle:LineSegment
+                    End="-85.028578571397,24.0470571805035" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-85.028578571397,24.0470571805035"
+                    Point2="-89.028578571397,24.0470571805035"
+                    Point3="-89.028578571397,28.0470571805035" />
+                  <mssgle:LineSegment
+                    End="-89.028578571397,40.594114361007" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="11.99230359058,5,13.7725390625,9.5341796875"
+              BoundingBox="-70.5481564731985,29.0470571805035,52.067734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1794,7 +1794,7 @@ where EventSystemCode = 'Jigsaw'</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">true</Value>
+          type="q2:string">true</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1804,7 +1804,7 @@ where EventSystemCode = 'Jigsaw'</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -1,39 +1,27 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/29/2016 9:32:11 AM"
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="BASCOEVM-SS"
   DTS:CreatorName="BASCOEVM-SS\N"
-  DTS:DTSID="{331CEBA8-0B6E-4E45-B6EB-422009207943}"
+  DTS:DTSID="{4E70D013-3380-4BAD-AA7C-1B222549040D}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.6020.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="6 REMS Event Start Date is same as in Jigsaw"
+  DTS:ObjectName="22 Close Event Delay in REMS"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{2C2A630D-B143-4463-8E17-C6071D69C174}">
+  DTS:VersionBuild="70"
+  DTS:VersionGUID="{A90CEECA-CBCB-4977-8960-20515D2B3C03}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[LocalHost.Jigsaw]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{CB0542F0-9F3E-41CD-B53F-36CAFE961C26}"
-      DTS:ObjectName="LocalHost.Jigsaw">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[User::SourceConn2]</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=.;Initial Catalog=Jigsaw;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.REMS_DEV]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{E5B1ABE3-0E5F-4C76-928E-8B44BA140E40}"
+      DTS:DTSID="{60BBAA13-EE80-49FC-9468-9F9E2C9DBD09}"
       DTS:ObjectName="LocalHost.REMS_DEV">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::SourceConn1]</DTS:PropertyExpression>
@@ -46,7 +34,7 @@
       DTS:refId="Package.ConnectionManagers[PushResultstoR2D2Model.dtsx]"
       DTS:CreationName="FILE"
       DTS:DelayValidation="True"
-      DTS:DTSID="{61F7FFEB-2508-4178-BD3F-223070FEFC4B}"
+      DTS:DTSID="{0320B717-90CA-43E8-9F55-452E0B415387}"
       DTS:ObjectName="PushResultstoR2D2Model.dtsx">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::PushToR2D2Package]</DTS:PropertyExpression>
@@ -60,61 +48,61 @@
       DTS:ConfigurationString="User::runid"
       DTS:ConfigurationVariable="\Package.Variables[User::runid].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{087274EB-9592-4846-A2D9-095678B97EFA}"
+      DTS:DTSID="{B52115B9-948D-49BB-83E6-5623E7414BD8}"
       DTS:ObjectName="RunID" />
     <DTS:Configuration
       DTS:ConfigurationString="User::DQS_Server"
       DTS:ConfigurationVariable="\Package.Variables[User::DQS_Server].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{74F5389B-F254-4CF3-80B5-26278A81D5DD}"
+      DTS:DTSID="{FE6BEE6B-3C9F-4649-BC96-0347B708D0F4}"
       DTS:ObjectName="Server" />
     <DTS:Configuration
       DTS:ConfigurationString="User::DQS_Pwd"
       DTS:ConfigurationVariable="\Package.Variables[User::DQS_Pwd].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{5513D1AD-3BBC-442E-BCED-EF1A9C6C3C44}"
+      DTS:DTSID="{7C95D78B-47B2-44D5-ACAE-65BFAE45165A}"
       DTS:ObjectName="Password" />
     <DTS:Configuration
       DTS:ConfigurationString="User::DQS_User"
       DTS:ConfigurationVariable="\Package.Variables[User::DQS_User].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{5E91B750-4FBF-4092-8074-410E21EBD2BF}"
+      DTS:DTSID="{14AA98C8-A2D6-4946-9638-1B0D584B4F0B}"
       DTS:ObjectName="UserName" />
     <DTS:Configuration
       DTS:ConfigurationString="User::RuleID"
       DTS:ConfigurationVariable="\Package.Variables[User::RuleID].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{5A2CEE2B-6F21-429D-ABDA-9BFF316C14E1}"
+      DTS:DTSID="{B8C850BF-99FE-438A-811D-686641EEDEF2}"
       DTS:ObjectName="RuleID" />
     <DTS:Configuration
       DTS:ConfigurationString="User::PushToR2D2Package"
       DTS:ConfigurationVariable="\Package.Variables[User::PushToR2D2Package].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{7DE2DC53-927D-4A8A-9926-3F71640BDFA2}"
+      DTS:DTSID="{A6701962-8BB7-4738-9ECE-6920C6A76512}"
       DTS:ObjectName="PushToR2D2Package" />
     <DTS:Configuration
       DTS:ConfigurationString="User::DQS_DB"
       DTS:ConfigurationVariable="\Package.Variables[User::DQS_DB].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{AAB3456D-1BFB-4B71-88FE-AE7A4A5D37B7}"
+      DTS:DTSID="{075CF117-CD5B-4E99-807A-AB3CEDE8F7DA}"
       DTS:ObjectName="DQS_DB" />
     <DTS:Configuration
       DTS:ConfigurationString="User::SourceConn1"
       DTS:ConfigurationVariable="\Package.Variables[User::SourceConn1].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{B0954A37-0D8F-4524-846E-4BFDA87F15AF}"
+      DTS:DTSID="{3243973B-5C84-4FE5-9297-547C0AFA8739}"
       DTS:ObjectName="SourceConn1" />
     <DTS:Configuration
       DTS:ConfigurationString="User::SourceConn2"
       DTS:ConfigurationVariable="\Package.Variables[User::SourceConn2].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{7CEC0827-49EA-4A0B-B85A-B3556A4A7118}"
+      DTS:DTSID="{A9AC3676-6E1E-4456-A488-95F63A53224E}"
       DTS:ObjectName="SourceConn2" />
   </DTS:Configurations>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A60DB366-161B-42DD-852F-380964363C13}"
+      DTS:DTSID="{25346170-D538-46E8-8566-4F6ACCC258BE}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DQS_DB">
@@ -124,7 +112,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B0F7D4F8-9B5B-4CA8-B44D-B4DB857DEE0B}"
+      DTS:DTSID="{70FEAF78-2B4A-4E20-9F49-6C9FCAA98CD7}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DQS_Pwd">
@@ -133,7 +121,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{26EB27C0-6C59-4C8D-A717-C76DE9DDA544}"
+      DTS:DTSID="{0CB778BF-1D61-4833-B59A-68FCD4953566}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DQS_Server">
@@ -142,7 +130,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6B902A5A-A3B3-45CD-B77C-4EF570B29A24}"
+      DTS:DTSID="{D0355299-29F1-4F78-993A-D1554C914EE1}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DQS_User">
@@ -151,7 +139,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{1958B90A-70B8-4671-AC91-99FB870AF8FE}"
+      DTS:DTSID="{B857A82C-D2EF-47FA-B0A7-F6E2C3CC6EB6}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="EndDT">
@@ -160,7 +148,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0598DB56-58BC-4B94-868C-9ED8CA327C69}"
+      DTS:DTSID="{5EF3890F-A1EC-4824-80D9-95D711145950}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="FailCount">
@@ -169,7 +157,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EBC137DE-5C28-4C65-B721-83F4D98614CB}"
+      DTS:DTSID="{0CDD20BF-8B3E-4A97-89F0-607468B758D8}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="FailPercent">
@@ -178,7 +166,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{295BDA63-8E5F-4A38-9C2A-1B4C29ED225A}"
+      DTS:DTSID="{EFDE8DE6-25CA-4276-8992-A75D713160D9}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="PassCount">
@@ -187,7 +175,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3D95AB62-817E-4165-A330-75EFF22170CC}"
+      DTS:DTSID="{163A1F5A-A8BF-4A24-958A-9D6C6CAB4900}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="PassPercent">
@@ -196,7 +184,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6DAF8BF0-EC45-492D-BABC-4F8821180B14}"
+      DTS:DTSID="{B1039C89-B8AE-4308-AC74-76A541AEA870}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PushToR2D2Package">
@@ -206,7 +194,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2B24A580-01D9-4D41-AB5D-20650C72029A}"
+      DTS:DTSID="{2276961A-7D84-419A-AE15-DA9814FFB8C0}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RuleID">
@@ -215,7 +203,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8824DB10-80F4-4C71-93FD-4BC53D7B7BD8}"
+      DTS:DTSID="{C6FBEE26-C26F-4BA4-B9FC-392DFAD528DA}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="RuleStatus">
@@ -224,7 +212,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{70CEBD20-5DD4-47B8-A722-22AF61F3C0CF}"
+      DTS:DTSID="{FB91724C-39B0-4F95-BDE0-D60D5B2A5C6A}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="runid">
@@ -233,7 +221,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{497C1E70-B64F-4442-A6E6-4CE99EB78581}"
+      DTS:DTSID="{CFE7091F-7041-4696-B5D3-1590FE755857}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RunStatus">
@@ -242,7 +230,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F5A4191A-F0C4-44CD-8AEE-A4323142D981}"
+      DTS:DTSID="{459A8F59-66B2-4E29-BD7C-E0433A7C9804}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceConn1">
@@ -251,25 +239,25 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6F976C1F-A029-4394-9C2B-FF24B7C365A2}"
+      DTS:DTSID="{A3B458CB-FBB0-46FD-ADDC-46C23EBCDDA1}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceConn2">
       <DTS:VariableValue
-        DTS:DataType="8">Data Source=.;Initial Catalog=Jigsaw;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+        DTS:DataType="8">Data Source=.;Initial Catalog=REMS_DEV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D6A7A625-6ED6-40BA-A94A-4A69A64B361B}"
+      DTS:DTSID="{A1ACD939-20D3-447A-A977-41D639CCA251}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="StartDT">
       <DTS:VariableValue
-        DTS:DataType="7">11/30/2016 9:16:00 AM</DTS:VariableValue>
+        DTS:DataType="7">11/30/2016 9:16:14 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A438B575-E82A-4294-BFE1-7996A92BEBB4}"
+      DTS:DTSID="{F984D2CA-8D6B-4EBC-B52F-437B4F36ABBE}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="TotalRows">
@@ -282,7 +270,7 @@
       DTS:refId="Package\Execute Rule"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{2FC998CC-35A2-4533-BD19-4F4259AB4B84}"
+      DTS:DTSID="{0B04EE91-47F0-4A5E-BBA9-14FAB58A39C0}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute Rule">
@@ -292,7 +280,7 @@
           DTS:refId="Package\Execute Rule\End Time"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Expression Task"
-          DTS:DTSID="{3680ADDF-6717-41F5-AE75-E99CC0CD9F34}"
+          DTS:DTSID="{F4DF4621-79DB-4133-8378-5D0FF79FD899}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="End Time"
@@ -308,7 +296,7 @@
           DTS:refId="Package\Execute Rule\Rule Logic"
           DTS:CreationName="SSIS.Pipeline.3"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{7E1C4D63-E314-4AB1-974D-D42AE57C009A}"
+          DTS:DTSID="{9272BD04-F624-47CE-8EDA-686F27B98E11}"
           DTS:ExecutableType="SSIS.Pipeline.3"
           DTS:LocaleID="-1"
           DTS:ObjectName="Rule Logic"
@@ -332,15 +320,10 @@
                       name="Conditional Split Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input].Columns[EventDateTime]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="EventDateTime"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]" />
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input].Columns[starttime]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="starttime"
-                          lineageId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[starttime]" />
+                          refId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input].Columns[Closed Delay]"
+                          cachedDataType="i4"
+                          cachedName="Closed Delay"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Closed Delay]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -348,7 +331,7 @@
                   <outputs>
                     <output
                       refId="Package\Execute Rule\Rule Logic\Conditional Split.Outputs[Compliance]"
-                      description="Output 2 of the Conditional Split Transformation"
+                      description="Output 1 of the Conditional Split Transformation"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       exclusionGroup="1"
@@ -360,13 +343,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                          name="Expression">[DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[starttime]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]},1)) &gt;= -3 &amp;&amp; [DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[starttime]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]},1)) &lt;= 3</property>
+                          name="Expression">[ISNULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Closed Delay]}) ==  FALSE  &amp;&amp; #{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Closed Delay]} &gt;= -3 &amp;&amp; #{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Closed Delay]} &lt;= 3</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the friendly version of the expression. This expression version uses column names."
                           expressionType="Notify"
-                          name="FriendlyExpression">DATEDIFF("Minute",REPLACENULL(starttime,1),REPLACENULL(EventDateTime,1)) &gt;= -3 &amp;&amp; DATEDIFF("Minute",REPLACENULL(starttime,1),REPLACENULL(EventDateTime,1)) &lt;= 3</property>
+                          name="FriendlyExpression">ISNULL([Closed Delay]) ==  FALSE  &amp;&amp; [Closed Delay] &gt;= -3 &amp;&amp; [Closed Delay] &lt;= 3</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -442,185 +425,6 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Execute Rule\Rule Logic\Lookup"
-                  componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
-                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-                  name="Lookup"
-                  usesDispositions="true"
-                  version="6">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the SQL statement that generates the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select top 1 equipment_id as eid, Convert(nvarchar(100), name ) equipment , time as starttime
-              from [dbo].[shift_states] s inner join equipment e on s.equipment_id = e.id
-               where  s.reason_id IN (195, 196)
-			   and  name = 'EX229'
-			   order by time desc</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select top 1 equipment_id as eid, Convert(nvarchar(100), name ) equipment , time as starttime
-              from [dbo].[shift_states] s inner join equipment e on s.equipment_id = e.id
-               where  s.reason_id IN (195, 196)
-			   and  name = ?
-			   order by time desc</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the type of connection used to access the reference dataset."
-                      name="ConnectionType"
-                      typeConverter="LookupConnectionType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the cache type of the lookup table."
-                      name="CacheType"
-                      typeConverter="CacheType">2</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                      name="NoMatchBehavior"
-                      typeConverter="LookupNoMatchBehavior">1</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                      name="NoMatchCachePercentage">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                      name="MaxMemoryUsage">25</property>
-                    <property
-                      dataType="System.Int64"
-                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                      name="MaxMemoryUsage64">25</property>
-                    <property
-                      dataType="System.String"
-                      description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="eid" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="equipment" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="starttime" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Equipment]};</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                      name="TreatDuplicateKeysAsError">false</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Execute Rule\Rule Logic\Lookup.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.Jigsaw]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Jigsaw]"
-                      description="Connection manager used to access lookup data."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Execute Rule\Rule Logic\Lookup.Inputs[Lookup Input]"
-                      name="Lookup Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Lookup.Inputs[Lookup Input].Columns[Equipment]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Equipment"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Equipment]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">equipment</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output]"
-                      errorOrTruncationOperation="Lookup"
-                      exclusionGroup="1"
-                      name="Lookup Match Output"
-                      synchronousInputId="Package\Execute Rule\Rule Logic\Lookup.Inputs[Lookup Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[starttime]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[starttime]"
-                          name="starttime"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">starttime</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[eid]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[eid]"
-                          name="eid"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">eid</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup No Match Output]"
-                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                      exclusionGroup="1"
-                      name="Lookup No Match Output"
-                      synchronousInputId="Package\Execute Rule\Rule Logic\Lookup.Inputs[Lookup Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Lookup Error Output"
-                      synchronousInputId="Package\Execute Rule\Rule Logic\Lookup.Inputs[Lookup Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Execute Rule\Rule Logic\Pass Count"
                   componentClassID="{E2697D8C-70DA-42B2-8208-A19CE3A9FE41}"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -674,8 +478,19 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select EventID, Equipment, EquipmentTypeCode, EventDateTime, SystemClosedDate, EventClosedDateTime from rems_dev.dbo.event
-where EventSystemCode = 'Jigsaw'</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
+      [Equipment]
+  ,[StatusCode]
+      ,[EventDateTime]
+  ,[SystemClosedDate]
+  ,[CreatedDateTime]
+  ,[ModifiedDateTime]
+  ,(DATEDIFF(mi,  [EventDateTime], [CreatedDateTime])) as "Creation Delay"
+  ,(DATEDIFF(mi,  [SystemClosedDate], [ModifiedDateTime])) as "Closed Delay"
+  FROM [dbo].[Event]
+Where EventSystemCode = 'JigSaw'
+order by [EventDateTime] desc
+</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -712,15 +527,6 @@ where EventSystemCode = 'Jigsaw'</property>
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventID]"
-                          dataType="guid"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventID]"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventID]"
-                          name="EventID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
@@ -740,23 +546,32 @@ where EventSystemCode = 'Jigsaw'</property>
                           name="Equipment"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EquipmentTypeCode]"
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[StatusCode]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EquipmentTypeCode]"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[StatusCode]"
                           length="20"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EquipmentTypeCode]"
-                          name="EquipmentTypeCode"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[StatusCode]"
+                          name="StatusCode"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventClosedDateTime]"
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[CreatedDateTime]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventClosedDateTime]"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventClosedDateTime]"
-                          name="EventClosedDateTime"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedDateTime]"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[CreatedDateTime]"
+                          name="CreatedDateTime"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[ModifiedDateTime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDateTime]"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[ModifiedDateTime]"
+                          name="ModifiedDateTime"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]"
@@ -767,13 +582,27 @@ where EventSystemCode = 'Jigsaw'</property>
                           lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]"
                           name="SystemClosedDate"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Creation Delay]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[Creation Delay]"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Creation Delay]"
+                          name="Creation Delay"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Closed Delay]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[Closed Delay]"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Closed Delay]"
+                          name="Closed Delay"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventID]"
-                          dataType="guid"
-                          name="EventID" />
                         <externalMetadataColumn
                           refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventDateTime]"
                           dataType="dbTimeStamp"
@@ -784,18 +613,30 @@ where EventSystemCode = 'Jigsaw'</property>
                           length="100"
                           name="Equipment" />
                         <externalMetadataColumn
-                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EquipmentTypeCode]"
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[StatusCode]"
                           dataType="wstr"
                           length="20"
-                          name="EquipmentTypeCode" />
+                          name="StatusCode" />
                         <externalMetadataColumn
-                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[EventClosedDateTime]"
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedDateTime]"
                           dataType="dbTimeStamp"
-                          name="EventClosedDateTime" />
+                          name="CreatedDateTime" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDateTime]"
+                          dataType="dbTimeStamp"
+                          name="ModifiedDateTime" />
                         <externalMetadataColumn
                           refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[SystemClosedDate]"
                           dataType="dbTimeStamp"
                           name="SystemClosedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[Creation Delay]"
+                          dataType="i4"
+                          name="Creation Delay" />
+                        <externalMetadataColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].ExternalColumns[Closed Delay]"
+                          dataType="i4"
+                          name="Closed Delay" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -803,11 +644,6 @@ where EventSystemCode = 'Jigsaw'</property>
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
-                        <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventID]"
-                          dataType="guid"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventID]"
-                          name="EventID" />
                         <outputColumn
                           refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventDateTime]"
                           dataType="dbTimeStamp"
@@ -820,21 +656,36 @@ where EventSystemCode = 'Jigsaw'</property>
                           lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[Equipment]"
                           name="Equipment" />
                         <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EquipmentTypeCode]"
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[StatusCode]"
                           dataType="wstr"
                           length="20"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EquipmentTypeCode]"
-                          name="EquipmentTypeCode" />
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[StatusCode]"
+                          name="StatusCode" />
                         <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventClosedDateTime]"
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[CreatedDateTime]"
                           dataType="dbTimeStamp"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[EventClosedDateTime]"
-                          name="EventClosedDateTime" />
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[CreatedDateTime]"
+                          name="CreatedDateTime" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ModifiedDateTime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ModifiedDateTime]"
+                          name="ModifiedDateTime" />
                         <outputColumn
                           refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[SystemClosedDate]"
                           dataType="dbTimeStamp"
                           lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[SystemClosedDate]"
                           name="SystemClosedDate" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[Creation Delay]"
+                          dataType="i4"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[Creation Delay]"
+                          name="Creation Delay" />
+                        <outputColumn
+                          refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[Closed Delay]"
+                          dataType="i4"
+                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[Closed Delay]"
+                          name="Closed Delay" />
                         <outputColumn
                           refId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -881,268 +732,6 @@ where EventSystemCode = 'Jigsaw'</property>
                     </output>
                   </outputs>
                 </component>
-                <component
-                  refId="Package\Execute Rule\Rule Logic\Union All"
-                  componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
-                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
-                  name="Union All"
-                  version="1">
-                  <inputs>
-                    <input
-                      refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 3]"
-                      hasSideEffects="true"
-                      name="Union All Input 3">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 3].Columns[EventID]"
-                          cachedDataType="guid"
-                          cachedName="EventID"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventID]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EventID]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 3].Columns[EventDateTime]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="EventDateTime"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EventDateTime]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 3].Columns[Equipment]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Equipment"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Equipment]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[Equipment]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 3].Columns[EquipmentTypeCode]"
-                          cachedDataType="wstr"
-                          cachedLength="20"
-                          cachedName="EquipmentTypeCode"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EquipmentTypeCode]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EquipmentTypeCode]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 3].Columns[EventClosedDateTime]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="EventClosedDateTime"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventClosedDateTime]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EventClosedDateTime]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 3].Columns[SystemClosedDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="SystemClosedDate"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[SystemClosedDate]}</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 1]"
-                      hasSideEffects="true"
-                      name="Union All Input 1">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 1].Columns[EventID]"
-                          cachedDataType="guid"
-                          cachedName="EventID"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventID]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EventID]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 1].Columns[EventDateTime]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="EventDateTime"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EventDateTime]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 1].Columns[Equipment]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Equipment"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[Equipment]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[Equipment]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 1].Columns[EquipmentTypeCode]"
-                          cachedDataType="wstr"
-                          cachedLength="20"
-                          cachedName="EquipmentTypeCode"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EquipmentTypeCode]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EquipmentTypeCode]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 1].Columns[EventClosedDateTime]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="EventClosedDateTime"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventClosedDateTime]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EventClosedDateTime]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 1].Columns[SystemClosedDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="SystemClosedDate"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[SystemClosedDate]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 1].Columns[starttime]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="starttime"
-                          lineageId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[starttime]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[starttime]}</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 2]"
-                      dangling="true"
-                      hasSideEffects="true"
-                      name="Union All Input 2">
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1]"
-                      name="Union All Output 1">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EventID]"
-                          dataType="guid"
-                          lineageId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EventID]"
-                          name="EventID" />
-                        <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EventDateTime]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EventDateTime]"
-                          name="EventDateTime" />
-                        <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[Equipment]"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[Equipment]"
-                          name="Equipment" />
-                        <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EquipmentTypeCode]"
-                          dataType="wstr"
-                          length="20"
-                          lineageId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EquipmentTypeCode]"
-                          name="EquipmentTypeCode" />
-                        <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EventClosedDateTime]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[EventClosedDateTime]"
-                          name="EventClosedDateTime" />
-                        <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[SystemClosedDate]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[SystemClosedDate]"
-                          name="SystemClosedDate" />
-                        <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[starttime]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[starttime]"
-                          name="starttime" />
-                        <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[equipment_id]"
-                          dataType="i4"
-                          lineageId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[equipment_id]"
-                          name="equipment_id" />
-                        <outputColumn
-                          refId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[endtime]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1].Columns[endtime]"
-                          name="endtime" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
               </components>
               <paths>
                 <path
@@ -1151,18 +740,8 @@ where EventSystemCode = 'Jigsaw'</property>
                   name="Compliance"
                   startId="Package\Execute Rule\Rule Logic\Conditional Split.Outputs[Compliance]" />
                 <path
-                  refId="Package\Execute Rule\Rule Logic.Paths[Lookup Match Output]"
-                  endId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Execute Rule\Rule Logic.Paths[Lookup No Match Output]"
-                  endId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 3]"
-                  name="Lookup No Match Output"
-                  startId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup No Match Output]" />
-                <path
                   refId="Package\Execute Rule\Rule Logic.Paths[NC]"
-                  endId="Package\Execute Rule\Rule Logic\Union All.Inputs[Union All Input 1]"
+                  endId="Package\Execute Rule\Rule Logic\Fail Count.Inputs[Row Count Input 1]"
                   name="NC"
                   startId="Package\Execute Rule\Rule Logic\Conditional Split.Outputs[NC]" />
                 <path
@@ -1172,14 +751,9 @@ where EventSystemCode = 'Jigsaw'</property>
                   startId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Execute Rule\Rule Logic.Paths[Row Count Output 1]"
-                  endId="Package\Execute Rule\Rule Logic\Lookup.Inputs[Lookup Input]"
+                  endId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input]"
                   name="Row Count Output 1"
                   startId="Package\Execute Rule\Rule Logic\Row Count.Outputs[Row Count Output 1]" />
-                <path
-                  refId="Package\Execute Rule\Rule Logic.Paths[Union All Output 1]"
-                  endId="Package\Execute Rule\Rule Logic\Fail Count.Inputs[Row Count Input 1]"
-                  name="Union All Output 1"
-                  startId="Package\Execute Rule\Rule Logic\Union All.Outputs[Union All Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -1188,7 +762,7 @@ where EventSystemCode = 'Jigsaw'</property>
           DTS:refId="Package\Execute Rule\StartTime"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Expression Task"
-          DTS:DTSID="{E06E1CD0-07D9-4D71-8E07-FD29112292F5}"
+          DTS:DTSID="{430273C6-9195-463E-90F0-FF96884B13FA}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="StartTime"
@@ -1205,7 +779,7 @@ where EventSystemCode = 'Jigsaw'</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Execute Rule.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{AA799896-C980-4122-93DF-29EB0B05953E}"
+          DTS:DTSID="{B9637398-9731-49DA-865F-636C52791C9F}"
           DTS:From="Package\Execute Rule\StartTime"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -1213,7 +787,7 @@ where EventSystemCode = 'Jigsaw'</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Execute Rule.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{58A25162-D454-4178-941F-8678FAA7C4EE}"
+          DTS:DTSID="{B8B1366E-146E-4CA1-8135-B568ACA5F283}"
           DTS:From="Package\Execute Rule\Rule Logic"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -1224,12 +798,12 @@ where EventSystemCode = 'Jigsaw'</property>
       DTS:refId="Package\Failure Status"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Expression Task"
-      DTS:DTSID="{372BC638-D08B-461C-B75D-FA81FE97F572}"
+      DTS:DTSID="{C8BC9388-A7E0-4F45-BBF5-1304A4491478}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Failure Status"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -1240,7 +814,7 @@ where EventSystemCode = 'Jigsaw'</property>
       DTS:refId="Package\Push Results to R2D2 Model"
       DTS:CreationName="SSIS.ExecutePackageTask.3"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{69D61219-EBDE-44EE-B785-AAE02BED688A}"
+      DTS:DTSID="{BE4A001A-6B16-4A0C-9C6A-23617A6A4832}"
       DTS:ExecutableType="SSIS.ExecutePackageTask.3"
       DTS:LocaleID="-1"
       DTS:ObjectName="Push Results to R2D2 Model"
@@ -1248,7 +822,7 @@ where EventSystemCode = 'Jigsaw'</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
-          <Connection>{61F7FFEB-2508-4178-BD3F-223070FEFC4B}</Connection>
+          <Connection>{0320B717-90CA-43E8-9F55-452E0B415387}</Connection>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1256,12 +830,12 @@ where EventSystemCode = 'Jigsaw'</property>
       DTS:refId="Package\Success Status"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Expression Task"
-      DTS:DTSID="{D8E2D062-7757-4241-B384-4CA4AA9295E3}"
+      DTS:DTSID="{74C4268E-70D9-476A-B74A-9FA8BA22F73A}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Success Status"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -1273,14 +847,14 @@ where EventSystemCode = 'Jigsaw'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{31696716-A82F-453E-A073-0FC11BF366E7}"
+      DTS:DTSID="{9A217F55-1041-445E-8794-4E9604C64B9C}"
       DTS:From="Package\Success Status"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Push Results to R2D2 Model" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{60174945-F061-4ABC-B256-4B0E092B9395}"
+      DTS:DTSID="{AF6B2781-E330-4B93-9A66-E14B9916EF05}"
       DTS:From="Package\Execute Rule"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -1288,7 +862,7 @@ where EventSystemCode = 'Jigsaw'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{88F66E4C-0BA0-4B14-8311-280972D7F30B}"
+      DTS:DTSID="{A7731154-BE8B-4EA3-9250-3B51BD02C780}"
       DTS:From="Package\Execute Rule"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -1297,7 +871,7 @@ where EventSystemCode = 'Jigsaw'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{4B93AAC2-8393-4BFC-804E-44144C1B1257}"
+      DTS:DTSID="{7DC81D30-7025-4B99-9218-A133CA930F5E}"
       DTS:From="Package\Failure Status"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Push Results to R2D2 Model" />
@@ -1536,81 +1110,39 @@ where EventSystemCode = 'Jigsaw'</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="160,41.6"
-          Id="Package\Execute Rule\Rule Logic\REMS Event Data"
-          TopLeft="60,60" />
-        <NodeLayout
           Size="124.8,41.6"
           Id="Package\Execute Rule\Rule Logic\Fail Count"
-          TopLeft="471.31428410861,264.188234264545" />
+          TopLeft="480.799999591282,321.458824155735" />
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\Execute Rule\Rule Logic\Row Count"
-          TopLeft="94.2857148695966,172.56470746103" />
+          TopLeft="127.771430760987,185.176473196485" />
         <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Execute Rule\Rule Logic\Pass Count"
-          TopLeft="205.028569102774,253.458822551318" />
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\Execute Rule\Rule Logic\Union All"
-          TopLeft="480.914293917831,168.658825906008" />
+          Size="160,41.6"
+          Id="Package\Execute Rule\Rule Logic\REMS Event Data"
+          TopLeft="93.4857158913904,72.6117657354546" />
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Execute Rule\Rule Logic\Conditional Split"
-          TopLeft="282.057147674171,163.764708190311" />
+          TopLeft="359.771434711924,186.682355334932" />
         <NodeLayout
-          Size="112,41.6"
-          Id="Package\Execute Rule\Rule Logic\Lookup"
-          TopLeft="252.914290035014,21.8352944350985" />
-        <EdgeLayout
-          Id="Package\Execute Rule\Rule Logic.Paths[Union All Output 1]"
-          TopLeft="537.314289013221,210.258825906008">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53.9294083585372"
-              Start="0,0"
-              End="0,46.4294083585372">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.4294083585372" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="129.6,41.6"
+          Id="Package\Execute Rule\Rule Logic\Pass Count"
+          TopLeft="280.8,262.4" />
         <EdgeLayout
           Id="Package\Execute Rule\Rule Logic.Paths[Row Count Output 1]"
-          TopLeft="179.352381536263,172.56470746103">
+          TopLeft="257.371430760987,206.729414265709">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="129.561908498751,-109.129413025931"
+              EndConnector="102.400003950937,0"
               Start="0,0"
-              End="129.561908498751,-101.629413025931">
+              End="94.9000039509365,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-40.4502731105624" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-40.4502731105624"
-                    Point2="0,-44.4502731105624"
-                    Point3="4,-44.4502731105624" />
-                  <mssgle:LineSegment
-                    End="125.561908498751,-44.4502731105624" />
-                  <mssgle:CubicBezierSegment
-                    Point1="125.561908498751,-44.4502731105624"
-                    Point2="129.561908498751,-44.4502731105624"
-                    Point3="129.561908498751,-48.4502731105624" />
-                  <mssgle:LineSegment
-                    End="129.561908498751,-101.629413025931" />
+                    End="94.9000039509365,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1621,30 +1153,30 @@ where EventSystemCode = 'Jigsaw'</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Execute Rule\Rule Logic.Paths[OLE DB Source Output]"
-          TopLeft="140,101.6">
+          TopLeft="173.48571589139,114.211765735455">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.0857148695966,70.96470746103"
+              EndConnector="19.0857148695966,70.9647074610304"
               Start="0,0"
-              End="19.0857148695966,63.46470746103">
+              End="19.0857148695966,63.4647074610304">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.482353730515" />
+                    End="0,31.4823537305152" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.482353730515"
-                    Point2="0,35.482353730515"
-                    Point3="4,35.482353730515" />
+                    Point1="0,31.4823537305152"
+                    Point2="0,35.4823537305152"
+                    Point3="4,35.4823537305152" />
                   <mssgle:LineSegment
-                    End="15.0857148695966,35.482353730515" />
+                    End="15.0857148695966,35.4823537305152" />
                   <mssgle:CubicBezierSegment
-                    Point1="15.0857148695966,35.482353730515"
-                    Point2="19.0857148695966,35.482353730515"
-                    Point3="19.0857148695966,39.482353730515" />
+                    Point1="15.0857148695966,35.4823537305152"
+                    Point2="19.0857148695966,35.4823537305152"
+                    Point3="19.0857148695966,39.4823537305152" />
                   <mssgle:LineSegment
-                    End="19.0857148695966,63.46470746103" />
+                    End="19.0857148695966,63.4647074610304" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1655,161 +1187,78 @@ where EventSystemCode = 'Jigsaw'</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Execute Rule\Rule Logic.Paths[NC]"
-          TopLeft="435.657147674171,187.01176704816">
+          TopLeft="460.83810137859,228.282355334932">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="45.2571462436599,0"
+              EndConnector="82.3618982126918,93.1764688208029"
               Start="0,0"
-              End="37.7571462436599,0">
+              End="82.3618982126918,85.6764688208029">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="37.7571462436599,0" />
+                    End="0,33.8469368199963" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.8469368199963"
+                    Point2="0,37.8469368199963"
+                    Point3="4,37.8469368199963" />
+                  <mssgle:LineSegment
+                    End="78.3618982126918,37.8469368199963" />
+                  <mssgle:CubicBezierSegment
+                    Point1="78.3618982126918,37.8469368199963"
+                    Point2="82.3618982126918,37.8469368199963"
+                    Point3="82.3618982126918,41.8469368199963" />
+                  <mssgle:LineSegment
+                    End="82.3618982126918,85.6764688208029" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="11.99230359058,5,13.7725390625,9.5341796875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Execute Rule\Rule Logic.Paths[Lookup No Match Output]"
-          TopLeft="334.914290035014,63.4352944350985">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="206.000003882817,105.223531470909"
-              Start="0,0"
-              End="206.000003882817,97.7235314709093">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.7058830712474" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.7058830712474"
-                    Point2="0,36.7058830712474"
-                    Point3="4,36.7058830712474" />
-                  <mssgle:LineSegment
-                    End="202.000003882817,36.7058830712474" />
-                  <mssgle:CubicBezierSegment
-                    Point1="202.000003882817,36.7058830712474"
-                    Point2="206.000003882817,36.7058830712474"
-                    Point3="206.000003882817,40.7058830712474" />
-                  <mssgle:LineSegment
-                    End="206.000003882817,97.7235314709093" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="47.1936152226585,41.7058830712474,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Execute Rule\Rule Logic.Paths[Lookup Match Output]"
-          TopLeft="308.914290035014,63.4352944350985">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="49.942857639157,100.329413755213"
-              Start="0,0"
-              End="49.942857639157,92.8294137552125">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.1647068776063" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,46.1647068776063"
-                    Point2="0,50.1647068776063"
-                    Point3="4,50.1647068776063" />
-                  <mssgle:LineSegment
-                    End="45.942857639157,50.1647068776063" />
-                  <mssgle:CubicBezierSegment
-                    Point1="45.942857639157,50.1647068776063"
-                    Point2="49.942857639157,50.1647068776063"
-                    Point3="49.942857639157,54.1647068776063" />
-                  <mssgle:LineSegment
-                    End="49.942857639157,92.8294137552125" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-23.2199578991715,55.1647068776063,96.3827734375,11.609375"
+              BoundingBox="34.2946795750959,42.8469368199963,13.7725390625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Execute Rule\Rule Logic.Paths[Compliance]"
-          TopLeft="358.857147674171,205.364708190311">
+          TopLeft="436.571434711924,228.282355334932">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-89.028578571397,48.094114361007"
+              EndConnector="-90.9714347119235,34.1176446650679"
               Start="0,0"
-              End="-89.028578571397,40.594114361007">
+              End="-90.9714347119235,26.6176446650679">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.0470571805035" />
+                    End="0,13.058822332534" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.0470571805035"
-                    Point2="0,24.0470571805035"
-                    Point3="-4,24.0470571805035" />
+                    Point1="0,13.058822332534"
+                    Point2="0,17.058822332534"
+                    Point3="-4,17.058822332534" />
                   <mssgle:LineSegment
-                    End="-85.028578571397,24.0470571805035" />
+                    End="-86.9714347119235,17.058822332534" />
                   <mssgle:CubicBezierSegment
-                    Point1="-85.028578571397,24.0470571805035"
-                    Point2="-89.028578571397,24.0470571805035"
-                    Point3="-89.028578571397,28.0470571805035" />
+                    Point1="-86.9714347119235,17.058822332534"
+                    Point2="-90.9714347119235,17.058822332534"
+                    Point3="-90.9714347119235,21.058822332534" />
                   <mssgle:LineSegment
-                    End="-89.028578571397,40.594114361007" />
+                    End="-90.9714347119235,26.6176446650679" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-70.5481564731985,29.0470571805035,52.067734375,11.609375"
+              BoundingBox="-71.5195845434617,22.058822332534,52.067734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Execute Rule\Rule Logic\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">true</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

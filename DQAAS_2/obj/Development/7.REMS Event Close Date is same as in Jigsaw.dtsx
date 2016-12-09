@@ -13,8 +13,8 @@
   DTS:ObjectName="7 REMS Event Close Date is same as in Jigsaw"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{EA55B076-33C5-4B3F-AAAE-EAAD23315E22}">
+  DTS:VersionBuild="78"
+  DTS:VersionGUID="{456CA267-6DC1-4511-AA3C-BC8BCA8225F5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -360,13 +360,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                          name="Expression">[DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[endtime]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]},1)) &gt; -3 &amp;&amp; [DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[endtime]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]},1)) &lt; 3</property>
+                          name="Expression">[DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[endtime]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]},1)) &gt;= -3 &amp;&amp; [DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[endtime]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]},1)) &lt;= 3</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the friendly version of the expression. This expression version uses column names."
                           expressionType="Notify"
-                          name="FriendlyExpression">DATEDIFF("Minute",REPLACENULL(endtime,1),REPLACENULL(SystemClosedDate,1)) &gt; -3 &amp;&amp; DATEDIFF("Minute",REPLACENULL(endtime,1),REPLACENULL(SystemClosedDate,1)) &lt; 3</property>
+                          name="FriendlyExpression">DATEDIFF("Minute",REPLACENULL(endtime,1),REPLACENULL(SystemClosedDate,1)) &gt;= -3 &amp;&amp; DATEDIFF("Minute",REPLACENULL(endtime,1),REPLACENULL(SystemClosedDate,1)) &lt;= 3</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -1305,7 +1305,7 @@ where EventSystemCode = 'Jigsaw'</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Failure Status"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -1337,7 +1337,7 @@ where EventSystemCode = 'Jigsaw'</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Success Status"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -1681,33 +1681,33 @@ where EventSystemCode = 'Jigsaw'</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49.942857639157,100.329413755212"
+              EndConnector="49.942857639157,100.329413755213"
               Start="0,0"
-              End="49.942857639157,92.8294137552123">
+              End="49.942857639157,92.8294137552125">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.1647068776061" />
+                    End="0,46.1647068776063" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,46.1647068776061"
-                    Point2="0,50.1647068776061"
-                    Point3="4,50.1647068776061" />
+                    Point1="0,46.1647068776063"
+                    Point2="0,50.1647068776063"
+                    Point3="4,50.1647068776063" />
                   <mssgle:LineSegment
-                    End="45.942857639157,50.1647068776061" />
+                    End="45.942857639157,50.1647068776063" />
                   <mssgle:CubicBezierSegment
-                    Point1="45.942857639157,50.1647068776061"
-                    Point2="49.942857639157,50.1647068776061"
-                    Point3="49.942857639157,54.1647068776061" />
+                    Point1="45.942857639157,50.1647068776063"
+                    Point2="49.942857639157,50.1647068776063"
+                    Point3="49.942857639157,54.1647068776063" />
                   <mssgle:LineSegment
-                    End="49.942857639157,92.8294137552123" />
+                    End="49.942857639157,92.8294137552125" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-23.2199578991715,55.1647068776061,96.3827734375,11.609375"
+              BoundingBox="-23.2199578991715,55.1647068776063,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1717,33 +1717,33 @@ where EventSystemCode = 'Jigsaw'</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-89.0285785713968,48.0941143610066"
+              EndConnector="-89.028578571397,48.094114361007"
               Start="0,0"
-              End="-89.0285785713968,40.5941143610066">
+              End="-89.028578571397,40.594114361007">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.0470571805033" />
+                    End="0,20.0470571805035" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.0470571805033"
-                    Point2="0,24.0470571805033"
-                    Point3="-4,24.0470571805033" />
+                    Point1="0,20.0470571805035"
+                    Point2="0,24.0470571805035"
+                    Point3="-4,24.0470571805035" />
                   <mssgle:LineSegment
-                    End="-85.0285785713968,24.0470571805033" />
+                    End="-85.028578571397,24.0470571805035" />
                   <mssgle:CubicBezierSegment
-                    Point1="-85.0285785713968,24.0470571805033"
-                    Point2="-89.0285785713968,24.0470571805033"
-                    Point3="-89.0285785713968,28.0470571805033" />
+                    Point1="-85.028578571397,24.0470571805035"
+                    Point2="-89.028578571397,24.0470571805035"
+                    Point3="-89.028578571397,28.0470571805035" />
                   <mssgle:LineSegment
-                    End="-89.0285785713968,40.5941143610066" />
+                    End="-89.028578571397,40.594114361007" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-70.5481564731984,29.0470571805033,52.067734375,11.609375"
+              BoundingBox="-70.5481564731985,29.0470571805035,52.067734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
