@@ -13,8 +13,8 @@
   DTS:ObjectName="19 REMS equipment rows have a mapping to a SAP Fn Level 1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="69"
-  DTS:VersionGUID="{1B7A65B8-E1CB-4EFA-89D5-A3B3CD093409}">
+  DTS:VersionBuild="70"
+  DTS:VersionGUID="{67AE7C07-5FE0-41CB-9C57-5FE7E7E4E999}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -924,7 +924,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Failure Status"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -956,7 +956,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Success Status"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -1231,10 +1231,6 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Execute Rule\Rule Logic\Pass Count"
-          TopLeft="280.8,262.4" />
-        <NodeLayout
           Size="124.8,41.6"
           Id="Package\Execute Rule\Rule Logic\Fail Count"
           TopLeft="480.799999591282,321.458824155735" />
@@ -1246,66 +1242,14 @@
           Size="158.4,41.6"
           Id="Package\Execute Rule\Rule Logic\REMS Equipment"
           TopLeft="159.314288400144,77.0352948726667" />
-        <EdgeLayout
-          Id="Package\Execute Rule\Rule Logic.Paths[OLE DB Source Output]"
-          TopLeft="238.514288400144,118.635294872667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-45.942857639157,66.5411783238183"
-              Start="0,0"
-              End="-45.942857639157,59.0411783238183">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.2705891619091" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.2705891619091"
-                    Point2="0,33.2705891619091"
-                    Point3="-4,33.2705891619091" />
-                  <mssgle:LineSegment
-                    End="-41.942857639157,33.2705891619091" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-41.942857639157,33.2705891619091"
-                    Point2="-45.942857639157,33.2705891619091"
-                    Point3="-45.942857639157,37.2705891619091" />
-                  <mssgle:LineSegment
-                    End="-45.942857639157,59.0411783238183" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Execute Rule\Rule Logic\Conditional Split"
           TopLeft="326.971432191498,180.423531616765" />
-        <EdgeLayout
-          Id="Package\Execute Rule\Rule Logic.Paths[Row Count Output 1]"
-          TopLeft="257.371430760987,203.600002406625">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="69.6000014305115,0"
-              Start="0,0"
-              End="62.1000014305115,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="62.1000014305115,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Execute Rule\Rule Logic\Pass Count"
+          TopLeft="280.8,262.4" />
         <EdgeLayout
           Id="Package\Execute Rule\Rule Logic.Paths[Compliance]"
           TopLeft="403.771432191498,222.023531616765">
@@ -1338,8 +1282,64 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.1195832832492,25.1882341916173,52.067734375,11.609375"
+              BoundingBox="-55.1195832832493,25.1882341916173,52.067734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Execute Rule\Rule Logic.Paths[Row Count Output 1]"
+          TopLeft="257.371430760987,203.600002406625">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="69.6000014305115,0"
+              Start="0,0"
+              End="62.1000014305115,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="62.1000014305115,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Execute Rule\Rule Logic.Paths[OLE DB Source Output]"
+          TopLeft="238.514288400144,118.635294872667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-45.942857639157,66.5411783238183"
+              Start="0,0"
+              End="-45.942857639157,59.0411783238183">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.2705891619092" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.2705891619092"
+                    Point2="0,33.2705891619092"
+                    Point3="-4,33.2705891619092" />
+                  <mssgle:LineSegment
+                    End="-41.942857639157,33.2705891619092" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-41.942857639157,33.2705891619092"
+                    Point2="-45.942857639157,33.2705891619092"
+                    Point3="-45.942857639157,37.2705891619092" />
+                  <mssgle:LineSegment
+                    End="-45.942857639157,59.0411783238183" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
