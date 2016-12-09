@@ -13,8 +13,8 @@
   DTS:ObjectName="MasterPackage"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{1BC7362D-FF3E-4213-93F0-5945033226FE}">
+  DTS:VersionBuild="66"
+  DTS:VersionGUID="{FEE02A37-A86C-4ACB-9DED-82493A203429}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -205,7 +205,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SourceConn2">
       <DTS:VariableValue
-        DTS:DataType="8">Data Source=.;Initial Catalog=REMS_DEV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
+        DTS:DataType="8">Data Source=.;Initial Catalog=Jigsaw;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:LoggingOptions

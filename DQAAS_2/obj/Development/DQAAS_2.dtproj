@@ -53,10 +53,10 @@
                 <SSIS:Property SSIS:Name="Name">MasterPackage</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">65</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">66</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{1BC7362D-FF3E-4213-93F0-5945033226FE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{FEE02A37-A86C-4ACB-9DED-82493A203429}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
