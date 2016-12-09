@@ -5,23 +5,23 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="BASCOEVM-SS"
   DTS:CreatorName="BASCOEVM-SS\N"
-  DTS:DTSID="{B5661C9D-3244-4E30-8A86-F8930B9BC964}"
+  DTS:DTSID="{987A3EC5-7C82-4615-A416-902FE9EADFD9}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.6020.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="5 Duration in REMS is same as in JigSaw"
+  DTS:ObjectName="7 REMS Event Close Date is same as in Jigsaw"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{3B34BE43-E732-45A1-8CE7-8DA2A72CC44A}">
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{8E275253-18EE-4D62-A3EE-18C5EAA07CFC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Jigsaw]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{07518afb-c4b9-4587-bbf1-fb13f7562b4f}"
+      DTS:DTSID="{F33DFB5A-F114-44CE-92F8-1FCA25718137}"
       DTS:ObjectName="LocalHost.Jigsaw">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::SourceConn2]</DTS:PropertyExpression>
@@ -33,7 +33,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.REMS_DEV]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{F4F42741-A73E-4B29-B19B-BD09D83DC7DB}"
+      DTS:DTSID="{A740A6E0-5699-4B14-B7A4-7D184054CC79}"
       DTS:ObjectName="LocalHost.REMS_DEV">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::SourceConn1]</DTS:PropertyExpression>
@@ -46,7 +46,7 @@
       DTS:refId="Package.ConnectionManagers[PushResultstoR2D2Model.dtsx]"
       DTS:CreationName="FILE"
       DTS:DelayValidation="True"
-      DTS:DTSID="{86E95FCB-A771-47A3-8ACE-0FB66B94FF96}"
+      DTS:DTSID="{8ECE771A-FD3C-46B0-AC2D-58B84F566A62}"
       DTS:ObjectName="PushResultstoR2D2Model.dtsx">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::PushToR2D2Package]</DTS:PropertyExpression>
@@ -60,61 +60,61 @@
       DTS:ConfigurationString="User::runid"
       DTS:ConfigurationVariable="\Package.Variables[User::runid].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{EF06D2E4-6BE7-4FEA-A283-A6A67753A196}"
+      DTS:DTSID="{4B8A80C3-B2E9-4CEF-9621-442A606D5C79}"
       DTS:ObjectName="RunID" />
     <DTS:Configuration
       DTS:ConfigurationString="User::DQS_Server"
       DTS:ConfigurationVariable="\Package.Variables[User::DQS_Server].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{21C34B66-328A-4125-B074-B6D4F973E1A7}"
+      DTS:DTSID="{1E7435FC-93B8-4792-BF69-007070291D90}"
       DTS:ObjectName="Server" />
     <DTS:Configuration
       DTS:ConfigurationString="User::DQS_Pwd"
       DTS:ConfigurationVariable="\Package.Variables[User::DQS_Pwd].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{1CA0CC8F-B2A2-4856-B64A-7EF4B1FCD330}"
+      DTS:DTSID="{D73A519C-723E-454B-AA77-F01386B24936}"
       DTS:ObjectName="Password" />
     <DTS:Configuration
       DTS:ConfigurationString="User::DQS_User"
       DTS:ConfigurationVariable="\Package.Variables[User::DQS_User].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{C9070E92-8D39-482C-B7F2-4A990BADEE83}"
+      DTS:DTSID="{7C181548-34D5-4158-A662-8D7B6BCAC7F5}"
       DTS:ObjectName="UserName" />
     <DTS:Configuration
       DTS:ConfigurationString="User::RuleID"
       DTS:ConfigurationVariable="\Package.Variables[User::RuleID].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{3659BEFF-9A55-41BA-BE54-84C6FB38F345}"
+      DTS:DTSID="{75825B94-1FB4-4137-8CFF-405A62086B86}"
       DTS:ObjectName="RuleID" />
     <DTS:Configuration
       DTS:ConfigurationString="User::PushToR2D2Package"
       DTS:ConfigurationVariable="\Package.Variables[User::PushToR2D2Package].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{3967088F-B44A-4316-87D0-E5F5628DF630}"
+      DTS:DTSID="{E7434947-D9D9-4094-992E-AE64924D248B}"
       DTS:ObjectName="PushToR2D2Package" />
     <DTS:Configuration
       DTS:ConfigurationString="User::DQS_DB"
       DTS:ConfigurationVariable="\Package.Variables[User::DQS_DB].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{BFE6D3F0-8926-4E1D-ABD8-683ED6FACF40}"
+      DTS:DTSID="{29224148-162F-4942-8462-40479B836B72}"
       DTS:ObjectName="DQS_DB" />
     <DTS:Configuration
       DTS:ConfigurationString="User::SourceConn1"
       DTS:ConfigurationVariable="\Package.Variables[User::SourceConn1].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{C03C98BD-4C33-4A90-A90D-4C0BFB09CECD}"
+      DTS:DTSID="{783A1AF3-22FA-4633-A2DD-129ED03F04CE}"
       DTS:ObjectName="SourceConn1" />
     <DTS:Configuration
       DTS:ConfigurationString="User::SourceConn2"
       DTS:ConfigurationVariable="\Package.Variables[User::SourceConn2].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{FF7B465E-A186-448E-BD7B-40B73617C5DE}"
+      DTS:DTSID="{3641C80A-398F-418C-BC30-1B66A477CD54}"
       DTS:ObjectName="SourceConn2" />
   </DTS:Configurations>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{02DB15AC-77D4-47EA-B7B2-E4FA73E6F73C}"
+      DTS:DTSID="{BF0559C5-B3A0-4648-A006-F1B0B366DA2C}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DQS_DB">
@@ -124,7 +124,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{46F83E86-BA4B-4896-95F8-4C1F5E015166}"
+      DTS:DTSID="{04224BC3-6E1D-4392-BE8B-8A8C9CC66D13}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DQS_Pwd">
@@ -133,7 +133,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FA1FDADF-8A3A-4E9E-BADA-BFD620EAEE79}"
+      DTS:DTSID="{80C8FF9E-6E4A-4358-9FE9-012A91F50A77}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DQS_Server">
@@ -142,7 +142,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{22A837BB-4032-4526-9D5A-607C07964BF4}"
+      DTS:DTSID="{98BA2174-7584-4F65-AAAE-35A9F7BA124B}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DQS_User">
@@ -151,7 +151,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FDA1F924-EBBD-4F86-8164-51BBCAF27135}"
+      DTS:DTSID="{24CEFC55-BF9F-43C6-822B-E3F5C1A3C672}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="EndDT">
@@ -160,7 +160,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4EB61672-5196-468F-B99D-F2650F502B97}"
+      DTS:DTSID="{24AFFFF1-8FF5-47B2-9F8F-954C473F7147}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="FailCount">
@@ -169,7 +169,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D8BB35BD-B561-4F76-81FF-8ED25D8EC7D8}"
+      DTS:DTSID="{80D6B540-98DA-43FC-B7B6-02E8870CBB1A}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="FailPercent">
@@ -178,7 +178,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B0E1726D-0A85-4847-AE11-06788B14BFA2}"
+      DTS:DTSID="{4BE4987E-CEB8-412F-837A-A26D66235052}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="PassCount">
@@ -187,7 +187,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A21039B7-CFD3-4B57-9470-5F8DE0C78BEF}"
+      DTS:DTSID="{310A7B5E-757D-4C85-8051-F6C7FF2F3027}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="PassPercent">
@@ -196,7 +196,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{600C158E-BE8C-4082-923E-04BB48513C6A}"
+      DTS:DTSID="{A1A0F599-C7AE-4FE7-94B6-3462C626E5C8}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PushToR2D2Package">
@@ -206,7 +206,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C37A4475-AAFC-42BF-AEBD-7EA986E1BF0A}"
+      DTS:DTSID="{2BB1ECCB-387E-4144-8AC5-9C07BC303A72}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RuleID">
@@ -215,7 +215,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{AD52C2D1-1311-4921-BB76-A6469A8A3048}"
+      DTS:DTSID="{35FE42A7-8986-49B3-A6C8-56D8C650319F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="RuleStatus">
@@ -224,7 +224,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6D791EB2-17BA-4DC6-A03B-3DCE5CF4ED8F}"
+      DTS:DTSID="{C1883804-1030-498C-A6FF-B66EB7683DD4}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="runid">
@@ -233,7 +233,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B6E8635B-A9E7-48F4-A997-572FE89DD1B4}"
+      DTS:DTSID="{30C25DCD-B16E-4731-A0A2-D8D37C988B3F}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RunStatus">
@@ -242,7 +242,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7FDE320A-09E7-4185-B851-025F85B27A58}"
+      DTS:DTSID="{CC62955C-C715-4604-8E18-8FCDB2E141EE}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceConn1">
@@ -251,7 +251,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6B1206C8-07D5-4EFE-9D03-BEE7B1ABD1E5}"
+      DTS:DTSID="{AB39C3CF-1234-47D9-9EE5-D5EC8204F0C7}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceConn2">
@@ -260,7 +260,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7AA616C2-D609-45AF-9549-F8FCDC54E5A5}"
+      DTS:DTSID="{05A771D7-65DA-478C-8C3C-560C3B4F51B4}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="StartDT">
@@ -269,7 +269,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4AAD51A6-BECE-4D80-AA86-FB38AFFEC414}"
+      DTS:DTSID="{B5FF5AFE-28F0-4D16-AE7E-824D93BA952E}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="TotalRows">
@@ -282,7 +282,7 @@
       DTS:refId="Package\Execute Rule"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{7F40CD8E-9762-4CEB-8298-4C9426370C3C}"
+      DTS:DTSID="{D669BBB2-EAE1-44DF-BFEC-9850E85BFB52}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute Rule">
@@ -292,7 +292,7 @@
           DTS:refId="Package\Execute Rule\End Time"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Expression Task"
-          DTS:DTSID="{8F557538-3F11-4C97-B360-C0C503B084A9}"
+          DTS:DTSID="{A2391653-6005-46AF-8246-E1C200967E4E}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="End Time"
@@ -308,7 +308,7 @@
           DTS:refId="Package\Execute Rule\Rule Logic"
           DTS:CreationName="SSIS.Pipeline.3"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{366DC31A-00E0-42EC-B0FA-52BFE3130FB9}"
+          DTS:DTSID="{ECC7E711-AA51-4A87-97B3-F4834AA55D5E}"
           DTS:ExecutableType="SSIS.Pipeline.3"
           DTS:LocaleID="-1"
           DTS:ObjectName="Rule Logic"
@@ -337,16 +337,6 @@
                           cachedName="endtime"
                           lineageId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[endtime]" />
                         <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input].Columns[EventDateTime]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="EventDateTime"
-                          lineageId="Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]" />
-                        <inputColumn
-                          refId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input].Columns[starttime]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="starttime"
-                          lineageId="Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[starttime]" />
-                        <inputColumn
                           refId="Package\Execute Rule\Rule Logic\Conditional Split.Inputs[Conditional Split Input].Columns[SystemClosedDate]"
                           cachedDataType="dbTimeStamp"
                           cachedName="SystemClosedDate"
@@ -370,13 +360,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                          name="Expression">([DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[endtime]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[starttime]},1)) - [DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]},1)) &lt; 3) &amp;&amp; ([DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[endtime]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[starttime]},1)) - [DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[EventDateTime]},1)) &gt; -3)</property>
+                          name="Expression">[DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[endtime]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]},1)) &gt; -3 &amp;&amp; [DATEDIFF]("Minute",[REPLACENULL](#{Package\Execute Rule\Rule Logic\Lookup.Outputs[Lookup Match Output].Columns[endtime]},1),[REPLACENULL](#{Package\Execute Rule\Rule Logic\REMS Event Data.Outputs[OLE DB Source Output].Columns[SystemClosedDate]},1)) &lt; 3</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the friendly version of the expression. This expression version uses column names."
                           expressionType="Notify"
-                          name="FriendlyExpression">(DATEDIFF("Minute",REPLACENULL(endtime,1),REPLACENULL(starttime,1)) - DATEDIFF("Minute",REPLACENULL(SystemClosedDate,1),REPLACENULL(EventDateTime,1)) &lt; 3) &amp;&amp; (DATEDIFF("Minute",REPLACENULL(endtime,1),REPLACENULL(starttime,1)) - DATEDIFF("Minute",REPLACENULL(SystemClosedDate,1),REPLACENULL(EventDateTime,1)) &gt; -3)</property>
+                          name="FriendlyExpression">DATEDIFF("Minute",REPLACENULL(endtime,1),REPLACENULL(SystemClosedDate,1)) &gt; -3 &amp;&amp; DATEDIFF("Minute",REPLACENULL(endtime,1),REPLACENULL(SystemClosedDate,1)) &lt; 3</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -1274,7 +1264,7 @@ where EventSystemCode = 'Jigsaw'</property>
           DTS:refId="Package\Execute Rule\StartTime"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Expression Task"
-          DTS:DTSID="{DC8C3373-E276-49A3-A8B4-3703D78884B6}"
+          DTS:DTSID="{0BC5581A-CA9C-4F51-98E9-0CFD91E3EF03}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="StartTime"
@@ -1291,7 +1281,7 @@ where EventSystemCode = 'Jigsaw'</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Execute Rule.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{F3C82D19-D725-4E6A-B104-F56089F49D5C}"
+          DTS:DTSID="{B1232FAD-01CD-4392-86F3-648C355C1ED2}"
           DTS:From="Package\Execute Rule\StartTime"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -1299,7 +1289,7 @@ where EventSystemCode = 'Jigsaw'</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Execute Rule.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{C7CB96F2-BDF5-44B0-8629-51A84BA06051}"
+          DTS:DTSID="{8C89E137-7C59-43C6-B602-6452CC011A4B}"
           DTS:From="Package\Execute Rule\Rule Logic"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -1310,7 +1300,7 @@ where EventSystemCode = 'Jigsaw'</property>
       DTS:refId="Package\Failure Status"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Expression Task"
-      DTS:DTSID="{76CD8005-8D4F-4D96-A07F-BD9E3DC86870}"
+      DTS:DTSID="{2F561F37-82EA-4FAA-A921-1069903D3696}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Failure Status"
@@ -1326,7 +1316,7 @@ where EventSystemCode = 'Jigsaw'</property>
       DTS:refId="Package\Push Results to R2D2 Model"
       DTS:CreationName="SSIS.ExecutePackageTask.3"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{19DFA5C4-18D5-4961-B824-E7FBEF434EE3}"
+      DTS:DTSID="{7AC48F8B-4B91-4A36-8980-DA4A968EC88A}"
       DTS:ExecutableType="SSIS.ExecutePackageTask.3"
       DTS:LocaleID="-1"
       DTS:ObjectName="Push Results to R2D2 Model"
@@ -1334,7 +1324,7 @@ where EventSystemCode = 'Jigsaw'</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
-          <Connection>{86E95FCB-A771-47A3-8ACE-0FB66B94FF96}</Connection>
+          <Connection>{8ECE771A-FD3C-46B0-AC2D-58B84F566A62}</Connection>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1342,7 +1332,7 @@ where EventSystemCode = 'Jigsaw'</property>
       DTS:refId="Package\Success Status"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Expression Task"
-      DTS:DTSID="{41AD60FE-E25D-4AAE-9F48-1EF54498BCC0}"
+      DTS:DTSID="{86A4C430-A229-4F3B-A54C-1EF8D6B0940C}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Success Status"
@@ -1359,14 +1349,14 @@ where EventSystemCode = 'Jigsaw'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{8BE2CE0D-0C1B-4513-B12D-0C0AF4C48BA5}"
+      DTS:DTSID="{3C027990-D65E-4972-A87E-C4FA063949DD}"
       DTS:From="Package\Success Status"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Push Results to R2D2 Model" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{46AE4100-BAD0-4F60-818B-3EFF01120201}"
+      DTS:DTSID="{08B23896-D5D5-4841-876B-AA1EF4759805}"
       DTS:From="Package\Execute Rule"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -1374,7 +1364,7 @@ where EventSystemCode = 'Jigsaw'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{C877A5AC-ED2F-4DBF-B70E-1A659E626042}"
+      DTS:DTSID="{7B4EE9C4-F149-4E38-B2D3-E12EE6E4ECD4}"
       DTS:From="Package\Execute Rule"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -1383,7 +1373,7 @@ where EventSystemCode = 'Jigsaw'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{9C561BD8-1868-412D-A2FC-87452C0056F6}"
+      DTS:DTSID="{390EAE13-7B99-4748-9C41-E14E9581B819}"
       DTS:From="Package\Failure Status"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Push Results to R2D2 Model" />
@@ -1691,33 +1681,33 @@ where EventSystemCode = 'Jigsaw'</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49.942857639157,100.329413755212"
+              EndConnector="49.942857639157,100.329413755213"
               Start="0,0"
-              End="49.942857639157,92.8294137552123">
+              End="49.942857639157,92.8294137552125">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.1647068776061" />
+                    End="0,46.1647068776063" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,46.1647068776061"
-                    Point2="0,50.1647068776061"
-                    Point3="4,50.1647068776061" />
+                    Point1="0,46.1647068776063"
+                    Point2="0,50.1647068776063"
+                    Point3="4,50.1647068776063" />
                   <mssgle:LineSegment
-                    End="45.942857639157,50.1647068776061" />
+                    End="45.942857639157,50.1647068776063" />
                   <mssgle:CubicBezierSegment
-                    Point1="45.942857639157,50.1647068776061"
-                    Point2="49.942857639157,50.1647068776061"
-                    Point3="49.942857639157,54.1647068776061" />
+                    Point1="45.942857639157,50.1647068776063"
+                    Point2="49.942857639157,50.1647068776063"
+                    Point3="49.942857639157,54.1647068776063" />
                   <mssgle:LineSegment
-                    End="49.942857639157,92.8294137552123" />
+                    End="49.942857639157,92.8294137552125" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-23.2199578991715,55.1647068776061,96.3827734375,11.609375"
+              BoundingBox="-23.2199578991715,55.1647068776063,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1727,33 +1717,33 @@ where EventSystemCode = 'Jigsaw'</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-89.0285785713968,48.0941143610066"
+              EndConnector="-89.028578571397,48.094114361007"
               Start="0,0"
-              End="-89.0285785713968,40.5941143610066">
+              End="-89.028578571397,40.594114361007">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.0470571805033" />
+                    End="0,20.0470571805035" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.0470571805033"
-                    Point2="0,24.0470571805033"
-                    Point3="-4,24.0470571805033" />
+                    Point1="0,20.0470571805035"
+                    Point2="0,24.0470571805035"
+                    Point3="-4,24.0470571805035" />
                   <mssgle:LineSegment
-                    End="-85.0285785713968,24.0470571805033" />
+                    End="-85.028578571397,24.0470571805035" />
                   <mssgle:CubicBezierSegment
-                    Point1="-85.0285785713968,24.0470571805033"
-                    Point2="-89.0285785713968,24.0470571805033"
-                    Point3="-89.0285785713968,28.0470571805033" />
+                    Point1="-85.028578571397,24.0470571805035"
+                    Point2="-89.028578571397,24.0470571805035"
+                    Point3="-89.028578571397,28.0470571805035" />
                   <mssgle:LineSegment
-                    End="-89.0285785713968,40.5941143610066" />
+                    End="-89.028578571397,40.594114361007" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-70.5481564731984,29.0470571805033,52.067734375,11.609375"
+              BoundingBox="-70.5481564731985,29.0470571805035,52.067734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

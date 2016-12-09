@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DQAAS_2</Name>
-    <LastWriteTime>2016-12-07T09:43:58.5780155Z</LastWriteTime>
+    <LastWriteTime>2016-12-09T04:57:14.8495356Z</LastWriteTime>
     <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -23,7 +23,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>5.Duration in REMS is same as in JigSaw.dtsx</Name>
-      <LastWriteTime>2016-12-04T18:36:42.1856124Z</LastWriteTime>
+      <LastWriteTime>2016-12-09T05:26:38.055992Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -39,6 +39,21 @@
     <ProjectBuildItemInfo>
       <Name>19.REMS equipment rows have a mapping to a SAP Fn Level 1.dtsx</Name>
       <LastWriteTime>2016-12-07T10:03:55.9583251Z</LastWriteTime>
+      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>11.Unscheduled events not linked to a Notification.dtsx</Name>
+      <LastWriteTime>2016-12-09T00:58:15.7328543Z</LastWriteTime>
+      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>6.REMS Event Start Date is same as in Jigsaw.dtsx</Name>
+      <LastWriteTime>2016-12-09T04:55:31.452209Z</LastWriteTime>
+      <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>7.REMS Event Close Date is same as in Jigsaw.dtsx</Name>
+      <LastWriteTime>2016-12-09T05:16:33.7907487Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
