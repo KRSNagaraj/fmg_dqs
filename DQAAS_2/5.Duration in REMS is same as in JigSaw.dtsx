@@ -13,8 +13,8 @@
   DTS:ObjectName="5 Duration in REMS is same as in JigSaw"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="78"
-  DTS:VersionGUID="{4B993CC2-E353-4A2D-94D2-64E6811EC018}">
+  DTS:VersionBuild="79"
+  DTS:VersionGUID="{AA9615E2-C432-430B-9136-C983C5342ABE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -515,7 +515,7 @@ FROM cte_next_event</property>
      AND [time] &gt; starttime
    ORDER BY TIME
 		)
-select * from cte_next_event</property>
+select top 1 * from cte_next_event</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the type of connection used to access the reference dataset."
@@ -1868,7 +1868,7 @@ where EventSystemCode = 'Jigsaw'</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">true</Value>
+          type="q2:boolean">true</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1878,7 +1878,7 @@ where EventSystemCode = 'Jigsaw'</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
