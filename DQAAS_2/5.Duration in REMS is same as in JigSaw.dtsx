@@ -13,8 +13,8 @@
   DTS:ObjectName="5 Duration in REMS is same as in JigSaw"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{D8CA8F70-89AD-4C4B-BE3F-3B470963AE3F}">
+  DTS:VersionBuild="78"
+  DTS:VersionGUID="{4B993CC2-E353-4A2D-94D2-64E6811EC018}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -734,7 +734,7 @@ select * from cte_next_event</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select EventID, Equipment, EquipmentTypeCode, EventDateTime, SystemClosedDate, EventClosedDateTime from rems_dev.dbo.event
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select EventID, Equipment, EquipmentTypeCode, EventDateTime, SystemClosedDate, EventClosedDateTime from event
 where EventSystemCode = 'Jigsaw'</property>
                     <property
                       dataType="System.String"
@@ -1315,7 +1315,7 @@ where EventSystemCode = 'Jigsaw'</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Failure Status"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -1347,7 +1347,7 @@ where EventSystemCode = 'Jigsaw'</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Success Status"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -1743,30 +1743,18 @@ where EventSystemCode = 'Jigsaw'</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Execute Rule\Rule Logic.Paths[OLE DB Source Output]"
-          TopLeft="140,101.6">
+          TopLeft="139.409524101465,101.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.0857148695966,70.96470746103"
+              EndConnector="0,70.96470746103"
               Start="0,0"
-              End="19.0857148695966,63.46470746103">
+              End="0,63.46470746103">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.482353730515" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.482353730515"
-                    Point2="0,35.482353730515"
-                    Point3="4,35.482353730515" />
-                  <mssgle:LineSegment
-                    End="15.0857148695966,35.482353730515" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.0857148695966,35.482353730515"
-                    Point2="19.0857148695966,35.482353730515"
-                    Point3="19.0857148695966,39.482353730515" />
-                  <mssgle:LineSegment
-                    End="19.0857148695966,63.46470746103" />
+                    End="0,63.46470746103" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
