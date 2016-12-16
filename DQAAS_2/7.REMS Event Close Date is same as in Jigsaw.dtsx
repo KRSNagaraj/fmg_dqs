@@ -13,8 +13,8 @@
   DTS:ObjectName="7 REMS Event Close Date is same as in Jigsaw"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="78"
-  DTS:VersionGUID="{456CA267-6DC1-4511-AA3C-BC8BCA8225F5}">
+  DTS:VersionBuild="81"
+  DTS:VersionGUID="{74F00725-2412-4534-A461-616C21650C64}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -463,7 +463,7 @@
    WHERE s.reason_id IN (195,
                          196)
      AND equipment_id =
-       (SELECT ID
+       (SELECT top 1  ID
         FROM equipment
         WHERE name = 'EX229')
    ORDER BY TIME DESC),
@@ -491,7 +491,7 @@ FROM cte_next_event</property>
    WHERE s.reason_id IN (195,
                          196)
      AND equipment_id =
-       (SELECT ID
+       (SELECT top 1 ID
         FROM equipment
         WHERE name = ? )
    ORDER BY TIME DESC),
@@ -515,7 +515,7 @@ select * from cte_next_event</property>
                       dataType="System.Int32"
                       description="Specifies the cache type of the lookup table."
                       name="CacheType"
-                      typeConverter="CacheType">2</property>
+                      typeConverter="CacheType">1</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
@@ -724,7 +724,7 @@ select * from cte_next_event</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select EventID, Equipment, EquipmentTypeCode, EventDateTime, SystemClosedDate, EventClosedDateTime from rems_dev.dbo.event
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select EventID, Equipment, EquipmentTypeCode, EventDateTime, SystemClosedDate, EventClosedDateTime from event
 where EventSystemCode = 'Jigsaw'</property>
                     <property
                       dataType="System.String"
@@ -1391,15 +1391,15 @@ where EventSystemCode = 'Jigsaw'</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="123.2,41.6"
+          Size="123,42"
           Id="Package\Execute Rule\End Time"
           TopLeft="7.10000000000003,208.7" />
         <NodeLayout
-          Size="126.4,41.6"
+          Size="126,42"
           Id="Package\Execute Rule\Rule Logic"
           TopLeft="5.50000000000003,107.1" />
         <NodeLayout
-          Size="123.2,41.6"
+          Size="123,42"
           Id="Package\Execute Rule\StartTime"
           TopLeft="7.10000000000002,5.49999999999995" />
         <EdgeLayout
@@ -1449,20 +1449,20 @@ where EventSystemCode = 'Jigsaw'</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="150.4,305.6"
-          Size="150.4,348.8"
+          PanelSize="150,306"
+          Size="150,349"
           Id="Package\Execute Rule"
           TopLeft="225.585714460879,9.78235300123484" />
         <NodeLayout
-          Size="142.4,41.6"
+          Size="142,42"
           Id="Package\Failure Status"
           TopLeft="212.9,414.3" />
         <NodeLayout
-          Size="209.6,41.6"
+          Size="210,42"
           Id="Package\Push Results to R2D2 Model"
           TopLeft="192.34286043206,474.164710378152" />
         <NodeLayout
-          Size="147.2,41.6"
+          Size="147,42"
           Id="Package\Success Status"
           TopLeft="5.50000000000011,414.3" />
         <EdgeLayout
@@ -1612,31 +1612,31 @@ where EventSystemCode = 'Jigsaw'</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="124.8,41.6"
+          Size="125,42"
           Id="Package\Execute Rule\Rule Logic\Fail Count"
           TopLeft="471.31428410861,264.188234264545" />
         <NodeLayout
-          Size="129.6,41.6"
+          Size="130,42"
           Id="Package\Execute Rule\Rule Logic\Pass Count"
           TopLeft="205.028569102774,253.458822551318" />
         <NodeLayout
-          Size="129.6,41.6"
+          Size="130,42"
           Id="Package\Execute Rule\Rule Logic\Row Count"
           TopLeft="94.2857148695966,172.56470746103" />
         <NodeLayout
-          Size="120,41.6"
+          Size="120,42"
           Id="Package\Execute Rule\Rule Logic\Union All"
           TopLeft="480.914293917831,168.658825906008" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\Execute Rule\Rule Logic\Conditional Split"
           TopLeft="282.057147674171,163.764708190311" />
         <NodeLayout
-          Size="160,41.6"
+          Size="160,42"
           Id="Package\Execute Rule\Rule Logic\REMS Event Data"
           TopLeft="60,60" />
         <NodeLayout
-          Size="112,41.6"
+          Size="112,42"
           Id="Package\Execute Rule\Rule Logic\Lookup"
           TopLeft="252.914290035014,21.8352944350985" />
         <EdgeLayout
@@ -1865,12 +1865,20 @@ where EventSystemCode = 'Jigsaw'</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Execute Rule\Rule Logic\REMS Event Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Execute Rule\Rule Logic\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">true</Value>
+          type="q2:boolean">true</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1880,7 +1888,7 @@ where EventSystemCode = 'Jigsaw'</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
